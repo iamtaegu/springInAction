@@ -1,0 +1,8 @@
+tacos/TacoCloudApplication.class
+tacos/Order.class
+tacos/Ingredient.class
+tacos/web/WebConfig.class
+tacos/web/DesignTacoController.class
+tacos/Ingredient$Type.class
+tacos/Taco.class
+tacos/web/OrderController.class
