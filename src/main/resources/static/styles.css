@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 @charset "EUC-KR";
 
+=======
+>>>>>>> 3d77538 (ch3 init)
 div.ingredient-group:nth-child(odd) {
 	float: left;
 	padding-right: 20px;
 }
 
 div.ingredient-group:nth-child(even) {
+<<<<<<< HEAD
 	float: left;
+=======
+    float: left;
+>>>>>>> 3d77538 (ch3 init)
 	padding-right: 0;
 }
 
@@ -15,6 +22,7 @@ div.ingredient-group {
 }
 
 .grid:after {
+<<<<<<< HEAD
 	content: "";
 	display: table;
 	clear: both;
@@ -24,6 +32,17 @@ div.ingredient-group {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+=======
+  content: "";
+  display: table;
+  clear: both;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+>>>>>>> 3d77538 (ch3 init)
 }
 
 span.validationError {
