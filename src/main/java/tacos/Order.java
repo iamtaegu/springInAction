@@ -19,7 +19,7 @@ import java.util.List;
 @Table(name="Taco_Order")
 public class Order implements Serializable {
 
-	//Serial Number 
+	//Serial Number
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
