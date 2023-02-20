@@ -6,11 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="32adda90-1e92-43ad-b2d2-05139d4ef080" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Taco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Taco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
+>>>>>>> da2f8d76b1d5a7e653a5086399e2904b6945851d
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/JdbcOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/data/JdbcOrderRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/JdbcTacoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/data/JdbcTacoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/RawJdbcIngredientRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/DesignTacoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/DesignTacoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/IngredientByIdConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/IngredientByIdConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/OrderController.class" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/taco-cloud-0.0.3-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/taco-cloud-0.0.3-SNAPSHOT.jar.original" beforeDir="false" />
+>>>>>>> da2f8d76b1d5a7e653a5086399e2904b6945851d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,31 +58,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bccard9504/Desktop/git_springInAction&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b67b4f800f34f037917509ef0ceee06d&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/bccard9504/Desktop/git_springInAction",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors",
+    "spring.configuration.checksum": "b67b4f800f34f037917509ef0ceee06d",
+    "vue.rearranger.settings.migration": "true"
   }
+<<<<<<< HEAD
 }</component>
   <component name="RunManager" selected="JUnit.TacoCloudApplicationTests">
+=======
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.TacoCloudApplication">
+>>>>>>> da2f8d76b1d5a7e653a5086399e2904b6945851d
     <configuration name="HomeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="git_springInAction" />
+      <module name="taco-cloud" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tacos.*" />
@@ -116,13 +139,31 @@
       <option name="presentableId" value="Default" />
       <updated>1676589298492</updated>
       <workItem from="1676589299787" duration="2996000" />
+<<<<<<< HEAD
       <workItem from="1676592794097" duration="3188000" />
       <workItem from="1676776797320" duration="4981000" />
       <workItem from="1676895471829" duration="432000" />
+=======
+      <workItem from="1676592794097" duration="3603000" />
+      <workItem from="1676598309126" duration="891000" />
+      <workItem from="1676851378663" duration="693000" />
+      <workItem from="1676852080765" duration="3954000" />
+>>>>>>> da2f8d76b1d5a7e653a5086399e2904b6945851d
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
