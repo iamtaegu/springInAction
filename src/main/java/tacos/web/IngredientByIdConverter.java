@@ -1,3 +1,7 @@
+/**
+ * 컨터버 클래스 변경 이력
+ * [2023-02-20 ch03_JPA] JDBC > JPA 전환에 따른 변경
+ */
 package tacos.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import tacos.Ingredient;
 import tacos.data.IngredientRepository;
+
+import java.util.Optional;
 
 /**
  * 데이터의 타입을 변환해 주는 컨버터
@@ -26,9 +32,18 @@ public class IngredientByIdConverter
 	public IngredientByIdConverter(IngredientRepository ingredientRepo) {
 		this.ingredientRepo = ingredientRepo;
 	}
-	
+
+	/**
+	 * 스프링데이터JPA 사용을 위한 컨버터 등록은 아니고 업무 요건에 필요하여 컨버터 작성
+	 * JDBC 기반에서는 IngredientRepository를 구현하는 JdbcIngredientRepository의 findById() 메서드가 실행
+	 * 그러나, 스프링데이터JPA에서는 자동으로 구현된 findById() 메서드가 실행
+	 * @param id
+	 * @return
+	 */
 	@Override
 	public Ingredient convert(String id) {
-		return ingredientRepo.findById(id);
+		//return ingredientRepo.findById(id);
+		Optional<Ingredient> optionalIngredient = ingredientRepo.findById(id);
+		return optionalIngredient.isPresent() ? optionalIngredient.get() : null;
 	}
 }
