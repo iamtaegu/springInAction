@@ -6,56 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="32adda90-1e92-43ad-b2d2-05139d4ef080" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/Taco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/Taco.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/TacoCloudApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/TacoCloudApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcIngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcIngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcTacoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/JdbcTacoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/RawJdbcIngredientRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/data/TacoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/data/TacoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/web/DesignTacoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/web/DesignTacoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/web/IngredientByIdConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/web/IngredientByIdConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/web/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/web/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tacos/web/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tacos/web/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/design.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/design.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/orderForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/orderForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tacos/HomeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tacos/HomeControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/Ingredient$Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/Ingredient$Type.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/Ingredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/Ingredient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/Taco.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/Taco.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/TacoCloudApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/TacoCloudApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/JdbcIngredientRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/data/JdbcIngredientRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/JdbcOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/data/JdbcOrderRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/data/JdbcTacoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/data/JdbcTacoRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/DesignTacoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/DesignTacoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/IngredientByIdConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/IngredientByIdConverter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tacos/web/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tacos/web/WebConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/design.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/design.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/orderForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/orderForm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tacos/HomeControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tacos/HomeControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/tacos/TacoCloudApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/tacos/TacoCloudApplicationTests.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +62,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.TacoCloudApplication">
+  <component name="RunManager" selected="JUnit.TacoCloudApplicationTests">
     <configuration name="HomeControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="git_springInAction" />
       <extension name="coverage">
@@ -123,6 +78,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TacoCloudApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="taco-cloud" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tacos.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tacos" />
+      <option name="MAIN_CLASS_NAME" value="tacos.TacoCloudApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TacoCloudApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="taco-cloud" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="tacos.TacoCloudApplication" />
@@ -132,6 +102,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TacoCloudApplicationTests" />
         <item itemvalue="JUnit.HomeControllerTest" />
       </list>
     </recent_temporary>
@@ -146,7 +117,8 @@
       <updated>1676589298492</updated>
       <workItem from="1676589299787" duration="2996000" />
       <workItem from="1676592794097" duration="3188000" />
-      <workItem from="1676776797320" duration="4770000" />
+      <workItem from="1676776797320" duration="4981000" />
+      <workItem from="1676895471829" duration="432000" />
     </task>
     <servers />
   </component>
