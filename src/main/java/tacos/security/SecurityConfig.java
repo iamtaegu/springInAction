@@ -27,6 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf() // h2-console 추가
                 .ignoringAntMatchers("/h2-console/**").disable() // h2-console 추가
                 .httpBasic();
+        http.headers().frameOptions().disable(); //h2-console
     }
 
     /**
@@ -46,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "select username, password, enabled from Users " +
                                 "where username=?")
                 .authoritiesByUsernameQuery( //권한 쿼리
-                        "select username, authority from UserAuthorities " +
+                        "select username, authority from Authorities " +
                                 "where username=?")
                 .passwordEncoder(new NoEncodingPasswordEncoder());
     }
