@@ -4,12 +4,12 @@ tacos\data\OrderRepository.class
 tacos\data\IngredientRepository.class
 tacos\Ingredient.class
 tacos\Order.class
-tacos\data\JdbcIngredientRepository.class
+tacos\security\SecurityConfig.class
+tacos\TacoCloudApplication$1.class
 tacos\data\TacoRepository.class
 tacos\TacoCloudApplication.class
+tacos\security\NoEncodingPasswordEncoder.class
 tacos\web\IngredientByIdConverter.class
 tacos\web\DesignTacoController.class
 tacos\web\WebConfig.class
-tacos\data\JdbcTacoRepository.class
 tacos\web\OrderController.class
-tacos\data\JdbcOrderRepository.class
