@@ -44,6 +44,57 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     /**
+     * 웹 수준에서 보안 처리
+     *  1. HTTP 요청 처리를 허용하기 전에 충족되어야 할 특정 보안 조건을 구성
+     *  2. 커스텀 로그인 페이지 구성
+     *  3. 사용자가 애플리케이션을 로그아웃 할 수 있도록 함
+     *  4. CSRF 공격으로부터 보호
+     * @param http
+     * @throws Exception
+     */
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        /**
+         * authorizeRequests()는 ExpressionInterceptUrlRegistry 객체를 반환
+         * 이 객체는 URL 경로와 패턴 및 해당 경로의 보안 요구사항을 구성할 수 있음
+         *  ㅁ 여기서는 두 가지 보안 규칙을 지정
+         *      - /design, /orders는 ROLE_USER 권한을 갖는 사용자에게만 허용
+         *      - 이외의 모든 요청은 모든 사용자에게 허용
+         */
+        http
+        .authorizeRequests()
+            .antMatchers("/design", "/orders")
+                //.hasRole("ROLE_USER") // 보안 메서드
+                // 아래는 스프링 표현식으로 hasRole을 표현
+                .access("hasRole('ROLE_USER')") //SpEL
+            .antMatchers("/", "/**").permitAll()
+
+            //로그인
+            .and()
+                .formLogin()
+                // WebConfig 뷰 컨트롤러 등록
+                .loginPage("/login")
+                .defaultSuccessUrl("/design")
+                // 스프링 시큐리티 인증 default url은 login
+                //.loginProcessingUrl("/authenticate")
+                // username, password가 default
+                //.usernameParameter("user")
+                //.passwordParameter("pwd");
+
+            //로그아웃
+            .and()
+                .logout()
+                .logoutSuccessUrl("/")
+
+            // CSRF 공격 방어
+            // 폼의 hidden 필드에 name:_csrf으로 csrf 토큰 생성
+            // 제출된 폼의 csrf 토큰 값과 서버가 갖고 있는 값을 비요하고
+            // 그 값이 다르면 허용되지 않는 form에서의 제출로 간주
+            .and()
+                .csrf();
+    }
+
+    /**
      *
     @Autowired
     DataSource dataSource;
@@ -57,7 +108,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/h2-console/**").access("permitAll") // h2-console 추가
                 .antMatchers("/", "/**").access("permitAll")
             .and()
-                .csrf() // h2-console 추가
                 .ignoringAntMatchers("/h2-console/**").disable() // h2-console 추가
                 .httpBasic();
         http.headers().frameOptions().disable(); //h2-console
