@@ -18,3 +18,13 @@ server:
     key-store: classpath:certificate/mykeys.jks
     key-store-password: credit!23
     key-password: credit!23
+
+# log setting
+logging:
+  # file 이름 명시시 path 설정은 먹히지 않음
+  # path: /var/logs/
+  file: tacoCloud.log
+  level:
+    root: WARN
+    # 계층 형태로 표시해도 되고, package 형태도 가능
+    org.springframework.security: DEBUG
