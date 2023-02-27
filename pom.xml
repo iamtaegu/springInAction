@@ -95,6 +95,12 @@
 			<artifactId>spring-security-ldap</artifactId>
 		</dependency>
 
+		<!-- 구성 어노테이션 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>

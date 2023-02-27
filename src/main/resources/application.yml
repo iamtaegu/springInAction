@@ -1,3 +1,7 @@
+taco:
+  orders:
+    pageSize: 20
+
 spring:
   datasource:
     schema:

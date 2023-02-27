@@ -1,5 +1,9 @@
 package tacos.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,11 +24,20 @@ import org.springframework.validation.Errors;
 @RequestMapping("/orders")
 @SessionAttributes("order")
 public class OrderController {
-	
+/*
+	private int pageSize = 5;
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}*/
+	//구성 홀더 정의하기
+	private OrderProps props;
+
 	private OrderRepository orderRepo;
 	
-	public OrderController(OrderRepository orderRepo) {
+	public OrderController(OrderRepository orderRepo, OrderProps props) {
 		this.orderRepo = orderRepo;
+		this.props = props;
 	}
 
 	/**
@@ -88,5 +101,16 @@ public class OrderController {
 		sessionStatus.setComplete();
 		
 		return "redirect:/";
+	}
+
+	@GetMapping
+	public String ordersForUser(
+			@AuthenticationPrincipal User user, Model model
+	) {
+
+		Pageable pageable = PageRequest.of(0, 20);
+		model.addAttribute("orders", orderRepo.findByUserOrderByPlacedAtDesc(user, pageable));
+
+		return "orderList";
 	}
 }
