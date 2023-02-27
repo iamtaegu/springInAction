@@ -9,3 +9,12 @@ spring:
 # ex) 위에 설정한 속성들은 jndi-name 속성에 따라 무시
     #아래 설정이 없어 오류남
     #jndi-name: java:/comp/env/jdbc/tacoCloudDS
+
+# port:0으로 설정시 사용 가능한 포트를 무작위로 설정해줌
+server:
+  #port: 0
+  port: 8443
+  ssl:
+    key-store: classpath:certificate/mykeys.jks
+    key-store-password: credit!23
+    key-password: credit!23
