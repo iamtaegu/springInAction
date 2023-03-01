@@ -2,7 +2,9 @@ package tacos.data;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import tacos.Order;
+import tacos.Taco;
 import tacos.User;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
  */
 //public interface OrderRepository {
 //public interface OrderRepository
-public interface OrderRepository extends CrudRepository<Order, String> {
+public interface OrderRepository extends PagingAndSortingRepository<Order, Long> {
     List<User> findByUserOrderByPlacedAtDesc(User user, Pageable pageable);
     //Order save(Order order);
 }
