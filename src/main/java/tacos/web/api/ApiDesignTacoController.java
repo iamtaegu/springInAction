@@ -10,6 +10,9 @@ import tacos.Order;
 import tacos.Taco;
 import tacos.data.TacoRepository;
 
+import javax.annotation.Resource;
+import javax.annotation.Resources;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,7 +35,11 @@ public class ApiDesignTacoController {
     @GetMapping("/recent")
     public Iterable<Taco> recentTacos() {
         PageRequest page = PageRequest.of(0, 12, Sort.by("createdAt").descending());
-        return tacoRepo.findAll(page).getContent();
+
+        List<Taco> tacos = tacoRepo.findAll(page).getContent();
+
+        return tacos;
+
     }
 
     @GetMapping("/{id}")
