@@ -1,0 +1,757 @@
+2023-03-04 19:55:34.523 ERROR 15012 --- [localhost-startStop-1] o.s.b.web.embedded.tomcat.TomcatStarter  : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthEndpoint]: Factory method 'healthEndpoint' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+2023-03-04 19:55:34.573  WARN 15012 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : Failed to clear soft references from ObjectStreamClass$Caches for web application [ROOT]
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass$Caches$1 cannot be cast to class java.util.Map (java.io.ObjectStreamClass$Caches$1 and java.util.Map are in module java.base of loader 'bootstrap')
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearCache(WebappClassLoaderBase.java:2194) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesObjectStreamClassCaches(WebappClassLoaderBase.java:2181) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferences(WebappClassLoaderBase.java:1556) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.stop(WebappClassLoaderBase.java:1501) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappLoader.stopInternal(WebappLoader.java:447) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5514) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1437) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1426) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-03-04 19:55:34.610  WARN 15012 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2023-03-04 19:55:34.643 ERROR 15012 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:544) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at tacos.TacoCloudApplication.main(TacoCloudApplication.java:19) ~[classes!/:0.0.6-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:413) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthEndpoint]: Factory method 'healthEndpoint' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:226) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:214) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:91) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:80) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:250) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:237) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:54) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5245) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1421) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1411) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthEndpoint]: Factory method 'healthEndpoint' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 23 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthEndpoint]: Factory method 'healthEndpoint' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:590) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.createEndpointBean(EndpointDiscoverer.java:143) ~[spring-boot-actuator-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.createEndpointBeans(EndpointDiscoverer.java:132) ~[spring-boot-actuator-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.discoverEndpoints(EndpointDiscoverer.java:122) ~[spring-boot-actuator-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.getEndpoints(EndpointDiscoverer.java:116) ~[spring-boot-actuator-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.servletEndpointRegistrar(ServletEndpointManagementContextConfiguration.java:75) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$9c8ad91a.CGLIB$servletEndpointRegistrar$0(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$9c8ad91a$$FastClassBySpringCGLIB$$f552f31b.invoke(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$9c8ad91a.servletEndpointRegistrar(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthEndpoint]: Factory method 'healthEndpoint' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:582) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 48 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:282) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1267) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1124) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1247) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1096) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:514) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:502) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1198) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorBeansComposite.get(HealthIndicatorBeansComposite.java:46) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration.healthEndpoint(HealthEndpointConfiguration.java:38) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$$EnhancerBySpringCGLIB$$2f73722.CGLIB$healthEndpoint$0(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$$EnhancerBySpringCGLIB$$2f73722$$FastClassBySpringCGLIB$$19f393cc.invoke(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228) ~[spring-core-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:361) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.health.HealthEndpointConfiguration$$EnhancerBySpringCGLIB$$2f73722.healthEndpoint(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 49 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:182) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:275) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 81 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:581) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1322) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1288) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1215) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1093) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory$DependencyObjectProvider.getIfAvailable(DefaultListableBeanFactory.java:1706) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration.<init>(DataSourceHealthIndicatorAutoConfiguration.java:77) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$553ad2c5.<init>(<generated>) ~[spring-boot-actuator-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490) ~[na:na]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:170) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 83 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:224) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1012) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:338) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:333) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerPostProcessor.postProcessAfterInitialization(DataSourceInitializerPostProcessor.java:55) ~[spring-boot-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1703) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 101 common frames omitted
+Caused by: org.springframework.boot.context.properties.source.InvalidConfigurationPropertyValueException: Property spring.datasource.schema with value 'class path resource [schema.sql]' is invalid: The specified resource does not exist.
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getResources(DataSourceInitializer.java:169) ~[spring-boot-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.getScripts(DataSourceInitializer.java:151) ~[spring-boot-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.createSchema(DataSourceInitializer.java:95) ~[spring-boot-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.afterPropertiesSet(DataSourceInitializerInvoker.java:64) ~[spring-boot-autoconfigure-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 114 common frames omitted
+
+2023-03-04 19:58:04.982  WARN 25048 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+2023-03-04 19:58:05.001  WARN 25048 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : Failed to clear soft references from ObjectStreamClass$Caches for web application [ROOT]
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass$Caches$1 cannot be cast to class java.util.Map (java.io.ObjectStreamClass$Caches$1 and java.util.Map are in module java.base of loader 'bootstrap')
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearCache(WebappClassLoaderBase.java:2194) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesObjectStreamClassCaches(WebappClassLoaderBase.java:2181) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferences(WebappClassLoaderBase.java:1556) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.stop(WebappClassLoaderBase.java:1501) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappLoader.stopInternal(WebappLoader.java:447) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5514) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1437) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1426) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-03-04 19:58:05.019 ERROR 25048 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at tacos.TacoCloudApplication.main(TacoCloudApplication.java:19) ~[classes!/:0.0.6-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+	at org.hibernate.boot.spi.XmlMappingBinderAccess.<init>(XmlMappingBinderAccess.java:43) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.boot.MetadataSources.<init>(MetadataSources.java:87) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:209) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:164) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:51) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:589) ~[na:na]
+	at org.springframework.boot.loader.LaunchedURLClassLoader.loadClass(LaunchedURLClassLoader.java:93) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[na:na]
+	... 35 common frames omitted
+
+2023-03-04 20:01:24.169  WARN 15700 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+2023-03-04 20:01:24.195  WARN 15700 --- [localhost-startStop-1] o.a.c.loader.WebappClassLoaderBase       : Failed to clear soft references from ObjectStreamClass$Caches for web application [ROOT]
+
+java.lang.ClassCastException: class java.io.ObjectStreamClass$Caches$1 cannot be cast to class java.util.Map (java.io.ObjectStreamClass$Caches$1 and java.util.Map are in module java.base of loader 'bootstrap')
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearCache(WebappClassLoaderBase.java:2194) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesObjectStreamClassCaches(WebappClassLoaderBase.java:2181) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.clearReferences(WebappClassLoaderBase.java:1556) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappClassLoaderBase.stop(WebappClassLoaderBase.java:1501) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.loader.WebappLoader.stopInternal(WebappLoader.java:447) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5514) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:226) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1437) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1426) ~[tomcat-embed-core-8.5.32.jar!/:8.5.32]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2023-03-04 20:01:24.218 ERROR 15700 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1699) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1089) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:859) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) ~[spring-context-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:398) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1258) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1246) ~[spring-boot-2.0.4.RELEASE.jar!/:2.0.4.RELEASE]
+	at tacos.TacoCloudApplication.main(TacoCloudApplication.java:19) ~[classes!/:0.0.6-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+Caused by: java.lang.NoClassDefFoundError: javax/xml/bind/JAXBException
+	at org.hibernate.boot.spi.XmlMappingBinderAccess.<init>(XmlMappingBinderAccess.java:43) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.boot.MetadataSources.<init>(MetadataSources.java:87) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:209) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.<init>(EntityManagerFactoryBuilderImpl.java:164) ~[hibernate-core-5.2.17.Final.jar!/:5.2.17.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:51) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:390) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:377) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1758) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1695) ~[spring-beans-5.0.8.RELEASE.jar!/:5.0.8.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:589) ~[na:na]
+	at org.springframework.boot.loader.LaunchedURLClassLoader.loadClass(LaunchedURLClassLoader.java:93) ~[taco-cloud-0.0.6-SNAPSHOT.jar:0.0.6-SNAPSHOT]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:522) ~[na:na]
+	... 35 common frames omitted
+
+2023-03-04 20:23:58.766 DEBUG 18176 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/**', OPTIONS]
+2023-03-04 20:23:58.774 DEBUG 18176 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/design']
+2023-03-04 20:23:58.776 DEBUG 18176 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/orders/**']
+2023-03-04 20:23:58.777 DEBUG 18176 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/ingredients', PATCH]
+2023-03-04 20:23:58.777 DEBUG 18176 --- [main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/**']
+2023-03-04 20:23:58.797 DEBUG 18176 --- [main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-03-04 20:23:58.800 DEBUG 18176 --- [main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-03-04 20:23:58.846  INFO 18176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@164305a, org.springframework.security.web.context.SecurityContextPersistenceFilter@276db8, org.springframework.security.web.header.HeaderWriterFilter@80e49b, org.springframework.security.web.csrf.CsrfFilter@1446bef, org.springframework.security.web.authentication.logout.LogoutFilter@1c44dec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@10ec41e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@17f7dd3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f6d40b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1098f9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10a696f, org.springframework.security.web.session.SessionManagementFilter@1c25153, org.springframework.security.web.access.ExceptionTranslationFilter@163c727, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1080f3a]
+2023-03-04 20:23:59.355  WARN 18176 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-04 20:24:46.255 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.257 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.258 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.259 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.262 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.263 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.264 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.265 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.266 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.266 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /' doesn't match 'POST /logout
+2023-03-04 20:24:46.266 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.267 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /' doesn't match 'POST /login
+2023-03-04 20:24:46.267 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.268 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.273 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.276 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.278 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.279 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.279 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.280 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.281 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.281 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/'; against '/design'
+2023-03-04 20:24:46.282 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/'; against '/orders/**'
+2023-03-04 20:24:46.283 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.284 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/' matched by universal pattern '/**'
+2023-03-04 20:24:46.285 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /; Attributes: [permitAll]
+2023-03-04 20:24:46.286 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.301 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.302 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.304 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.305 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : / reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.402 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.406 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.423 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.441 DEBUG 18176 --- [http-nio-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:46.464 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.465 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.468 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.470 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.478 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.474 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:46.476 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.477 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.477 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.478 DEBUG 18176 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.479 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:46.479 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.480 DEBUG 18176 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.480 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.483 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.480 DEBUG 18176 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.481 DEBUG 18176 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:46.489 DEBUG 18176 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.482 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.489 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.484 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.483 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.495 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.482 DEBUG 18176 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:46.496 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.490 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.497 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.496 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:46.495 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.502 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.496 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.502 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.505 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.502 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.502 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:46.503 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.505 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.505 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.506 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.506 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:46.506 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /main.bundle.js' doesn't match 'POST /logout
+2023-03-04 20:24:46.507 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.507 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /polyfills.bundle.js' doesn't match 'POST /logout
+2023-03-04 20:24:46.509 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.509 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:46.510 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.510 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.510 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.511 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /vendor.bundle.js' doesn't match 'POST /logout
+2023-03-04 20:24:46.512 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /polyfills.bundle.js' doesn't match 'POST /login
+2023-03-04 20:24:46.511 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:46.511 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /main.bundle.js' doesn't match 'POST /login
+2023-03-04 20:24:46.512 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /styles.bundle.js' doesn't match 'POST /logout
+2023-03-04 20:24:46.512 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.513 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.514 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /inline.bundle.js' doesn't match 'POST /logout
+2023-03-04 20:24:46.516 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.515 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.515 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.523 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /styles.bundle.js' doesn't match 'POST /login
+2023-03-04 20:24:46.523 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.515 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /vendor.bundle.js' doesn't match 'POST /login
+2023-03-04 20:24:46.526 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.528 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.532 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.516 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:46.517 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.519 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.538 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.540 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.541 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.541 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.542 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.525 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.535 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.545 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.548 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.537 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /inline.bundle.js' doesn't match 'POST /login
+2023-03-04 20:24:46.552 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:46.538 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.543 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.556 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /main.bundle.js' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.556 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/main.bundle.js'; against '/design'
+2023-03-04 20:24:46.544 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.552 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.555 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:46.563 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:46.565 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.566 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.555 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.559 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/main.bundle.js'; against '/orders/**'
+2023-03-04 20:24:46.574 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /main.bundle.js' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.575 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/main.bundle.js' matched by universal pattern '/**'
+2023-03-04 20:24:46.563 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:46.563 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.577 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /vendor.bundle.js' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.577 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/vendor.bundle.js'; against '/design'
+2023-03-04 20:24:46.578 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/vendor.bundle.js'; against '/orders/**'
+2023-03-04 20:24:46.572 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.573 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.575 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /main.bundle.js; Attributes: [permitAll]
+2023-03-04 20:24:46.581 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.576 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:46.579 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /vendor.bundle.js' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.579 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.587 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.580 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.585 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.587 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:46.587 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/vendor.bundle.js' matched by universal pattern '/**'
+2023-03-04 20:24:46.588 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /inline.bundle.js' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.588 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.589 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.590 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:46.590 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /vendor.bundle.js; Attributes: [permitAll]
+2023-03-04 20:24:46.591 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/inline.bundle.js'; against '/design'
+2023-03-04 20:24:46.592 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /polyfills.bundle.js' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.592 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.594 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:46.594 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.595 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/inline.bundle.js'; against '/orders/**'
+2023-03-04 20:24:46.595 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/polyfills.bundle.js'; against '/design'
+2023-03-04 20:24:46.600 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/polyfills.bundle.js'; against '/orders/**'
+2023-03-04 20:24:46.595 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /main.bundle.js reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.599 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /styles.bundle.js' doesn't match 'OPTIONS /**
+2023-03-04 20:24:46.607 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/styles.bundle.js'; against '/design'
+2023-03-04 20:24:46.600 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.600 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /inline.bundle.js' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.601 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /polyfills.bundle.js' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.610 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/polyfills.bundle.js' matched by universal pattern '/**'
+2023-03-04 20:24:46.609 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/styles.bundle.js'; against '/orders/**'
+2023-03-04 20:24:46.611 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /styles.bundle.js' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:46.611 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/styles.bundle.js' matched by universal pattern '/**'
+2023-03-04 20:24:46.612 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /styles.bundle.js; Attributes: [permitAll]
+2023-03-04 20:24:46.609 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.610 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/inline.bundle.js' matched by universal pattern '/**'
+2023-03-04 20:24:46.611 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /polyfills.bundle.js; Attributes: [permitAll]
+2023-03-04 20:24:46.611 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.612 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.612 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.613 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /inline.bundle.js; Attributes: [permitAll]
+2023-03-04 20:24:46.613 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.613 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.614 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.616 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.617 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.614 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : /vendor.bundle.js reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.614 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:46.623 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.624 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.625 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.615 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:46.626 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:46.621 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.622 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : /styles.bundle.js reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.630 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.626 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : /inline.bundle.js reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.627 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:46.633 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : /polyfills.bundle.js reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:46.628 DEBUG 18176 --- [http-nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:46.635 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.636 DEBUG 18176 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.632 DEBUG 18176 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.648 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.649 DEBUG 18176 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.640 DEBUG 18176 --- [http-nio-8080-exec-8] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.650 DEBUG 18176 --- [http-nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:46.648 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:46.650 DEBUG 18176 --- [http-nio-8080-exec-10] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.651 DEBUG 18176 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:46.652 DEBUG 18176 --- [http-nio-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:46.664 DEBUG 18176 --- [http-nio-8080-exec-9] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.665 DEBUG 18176 --- [http-nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:46.906 DEBUG 18176 --- [http-nio-8080-exec-7] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:46.908 DEBUG 18176 --- [http-nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.411 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.411 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.423 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.424 DEBUG 18176 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.425 DEBUG 18176 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.417 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.426 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.427 DEBUG 18176 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.417 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.422 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.426 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.428 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.429 DEBUG 18176 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.429 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.432 DEBUG 18176 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.430 DEBUG 18176 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.433 DEBUG 18176 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.431 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.435 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.431 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.432 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.440 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.433 DEBUG 18176 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.433 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.444 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.437 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.445 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.446 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.446 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.447 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoPhoto.jpg' doesn't match 'POST /logout
+2023-03-04 20:24:47.448 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.448 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoPhoto.jpg' doesn't match 'POST /login
+2023-03-04 20:24:47.449 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.450 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.438 DEBUG 18176 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.452 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.442 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.444 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.445 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.453 DEBUG 18176 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.455 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.455 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.456 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.456 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoCloud.png' doesn't match 'POST /logout
+2023-03-04 20:24:47.457 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.457 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.458 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.458 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.458 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.459 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.459 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.464 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.461 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/cart.png' doesn't match 'POST /logout
+2023-03-04 20:24:47.462 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.462 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoCloud.png' doesn't match 'POST /login
+2023-03-04 20:24:47.463 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.465 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.465 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.466 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.466 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.466 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.467 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoPhoto.jpg' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.473 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/TacoPhoto.jpg'; against '/design'
+2023-03-04 20:24:47.468 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/cart.png' doesn't match 'POST /login
+2023-03-04 20:24:47.469 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/down-triangle.png' doesn't match 'POST /logout
+2023-03-04 20:24:47.475 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.470 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.476 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.480 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.491 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.494 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.496 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.497 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.498 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoCloud.png' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.501 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/TacoCloud.png'; against '/design'
+2023-03-04 20:24:47.504 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/TacoCloud.png'; against '/orders/**'
+2023-03-04 20:24:47.506 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoCloud.png' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.506 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/assets/TacoCloud.png' matched by universal pattern '/**'
+2023-03-04 20:24:47.507 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /assets/TacoCloud.png; Attributes: [permitAll]
+2023-03-04 20:24:47.472 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.509 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /Cloud_sm.38af094ac456ef6df12e.png' doesn't match 'POST /logout
+2023-03-04 20:24:47.510 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.511 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /Cloud_sm.38af094ac456ef6df12e.png' doesn't match 'POST /login
+2023-03-04 20:24:47.514 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.515 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.474 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/TacoPhoto.jpg'; against '/orders/**'
+2023-03-04 20:24:47.522 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/TacoPhoto.jpg' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.474 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.475 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/down-triangle.png' doesn't match 'POST /login
+2023-03-04 20:24:47.508 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.519 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.528 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/assets/TacoPhoto.jpg' matched by universal pattern '/**'
+2023-03-04 20:24:47.528 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.528 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.529 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.531 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.530 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.530 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /assets/TacoPhoto.jpg; Attributes: [permitAll]
+2023-03-04 20:24:47.531 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.531 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.532 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.532 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.533 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.534 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.534 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.534 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.535 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.537 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.538 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.538 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : /assets/TacoCloud.png reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.538 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.539 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.539 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.540 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.544 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.542 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.544 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.543 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.543 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.547 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : /assets/TacoPhoto.jpg reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.544 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.548 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.545 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/cart.png' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.547 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /Cloud_sm.38af094ac456ef6df12e.png' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.548 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.548 DEBUG 18176 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.548 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/cart.png'; against '/design'
+2023-03-04 20:24:47.552 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/cart.png'; against '/orders/**'
+2023-03-04 20:24:47.553 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/cart.png' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.549 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/Cloud_sm.38af094ac456ef6df12e.png'; against '/design'
+2023-03-04 20:24:47.556 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.550 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/down-triangle.png' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.554 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/assets/cart.png' matched by universal pattern '/**'
+2023-03-04 20:24:47.556 DEBUG 18176 --- [http-nio-8080-exec-5] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.557 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/Cloud_sm.38af094ac456ef6df12e.png'; against '/orders/**'
+2023-03-04 20:24:47.559 DEBUG 18176 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.559 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/down-triangle.png'; against '/design'
+2023-03-04 20:24:47.559 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /assets/cart.png; Attributes: [permitAll]
+2023-03-04 20:24:47.560 DEBUG 18176 --- [http-nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.561 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /Cloud_sm.38af094ac456ef6df12e.png' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.566 DEBUG 18176 --- [http-nio-8080-exec-2] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.571 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/assets/down-triangle.png'; against '/orders/**'
+2023-03-04 20:24:47.571 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.573 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/Cloud_sm.38af094ac456ef6df12e.png' matched by universal pattern '/**'
+2023-03-04 20:24:47.574 DEBUG 18176 --- [http-nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.574 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /assets/down-triangle.png' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.576 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/assets/down-triangle.png' matched by universal pattern '/**'
+2023-03-04 20:24:47.574 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.575 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /Cloud_sm.38af094ac456ef6df12e.png; Attributes: [permitAll]
+2023-03-04 20:24:47.576 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /assets/down-triangle.png; Attributes: [permitAll]
+2023-03-04 20:24:47.577 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.577 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.578 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.578 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.581 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.582 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.582 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : /assets/cart.png reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.582 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.584 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.583 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.584 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.584 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : /Cloud_sm.38af094ac456ef6df12e.png reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.585 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : /assets/down-triangle.png reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.590 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.592 DEBUG 18176 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.593 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.594 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.594 DEBUG 18176 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.594 DEBUG 18176 --- [http-nio-8080-exec-3] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.594 DEBUG 18176 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.595 DEBUG 18176 --- [http-nio-8080-exec-4] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.598 DEBUG 18176 --- [http-nio-8080-exec-1] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.595 DEBUG 18176 --- [http-nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.598 DEBUG 18176 --- [http-nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.599 DEBUG 18176 --- [http-nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-03-04 20:24:47.618 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 1 of 13 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-03-04 20:24:47.620 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 2 of 13 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-03-04 20:24:47.620 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : No HttpSession currently exists
+2023-03-04 20:24:47.622 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : No SecurityContext was available from the HttpSession: null. A new one will be created.
+2023-03-04 20:24:47.623 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 3 of 13 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-03-04 20:24:47.624 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 4 of 13 in additional filter chain; firing Filter: 'CsrfFilter'
+2023-03-04 20:24:47.624 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.util.matcher.AndRequestMatcher   : Trying to match using org.springframework.security.web.csrf.CsrfFilter$DefaultRequiresCsrfMatcher@1104607
+2023-03-04 20:24:47.624 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.util.matcher.AndRequestMatcher   : Did not match
+2023-03-04 20:24:47.625 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 5 of 13 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-03-04 20:24:47.626 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /favicon.ico' doesn't match 'POST /logout
+2023-03-04 20:24:47.626 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 6 of 13 in additional filter chain; firing Filter: 'UsernamePasswordAuthenticationFilter'
+2023-03-04 20:24:47.626 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /favicon.ico' doesn't match 'POST /login
+2023-03-04 20:24:47.627 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 7 of 13 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-03-04 20:24:47.627 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 8 of 13 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-03-04 20:24:47.630 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 9 of 13 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-03-04 20:24:47.633 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 10 of 13 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-03-04 20:24:47.634 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Populated SecurityContextHolder with anonymous token: 'org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS'
+2023-03-04 20:24:47.634 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 11 of 13 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-03-04 20:24:47.635 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 12 of 13 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-03-04 20:24:47.635 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico at position 13 of 13 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-03-04 20:24:47.636 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /favicon.ico' doesn't match 'OPTIONS /**
+2023-03-04 20:24:47.636 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/favicon.ico'; against '/design'
+2023-03-04 20:24:47.637 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/favicon.ico'; against '/orders/**'
+2023-03-04 20:24:47.639 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /favicon.ico' doesn't match 'PATCH /ingredients
+2023-03-04 20:24:47.640 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request '/favicon.ico' matched by universal pattern '/**'
+2023-03-04 20:24:47.640 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /favicon.ico; Attributes: [permitAll]
+2023-03-04 20:24:47.641 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@a22985f9: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@b364: RemoteIpAddress: 0:0:0:0:0:0:0:1; SessionId: null; Granted Authorities: ROLE_ANONYMOUS
+2023-03-04 20:24:47.642 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@1336fa3, returned: 1
+2023-03-04 20:24:47.645 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-03-04 20:24:47.646 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-03-04 20:24:47.646 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : /favicon.ico reached end of additional filter chain; proceeding with original chain
+2023-03-04 20:24:47.657 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@24f160
+2023-03-04 20:24:47.657 DEBUG 18176 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : SecurityContext is empty or contents are anonymous - context will not be stored in HttpSession.
+2023-03-04 20:24:47.658 DEBUG 18176 --- [http-nio-8080-exec-6] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-03-04 20:24:47.659 DEBUG 18176 --- [http-nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
