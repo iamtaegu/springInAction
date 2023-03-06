@@ -5,12 +5,12 @@ import org.springframework.hateoas.client.Traverson;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-@Slf4j
-@Service
+//@Slf4j
+//@Service
 public class MyTacoCloudClient {
 
-    private RestTemplate rest;
-    private Traverson traverson;
+ //   private RestTemplate rest;
+ //   private Traverson traverson;
 
 }
 
