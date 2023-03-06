@@ -21,6 +21,11 @@ public class TacoCloudClient {
   private RestTemplate rest;
   private Traverson traverson;
 
+  /**
+   * RestTemplate는 RestExamples에서 @Bean으로 선언받아 아래 생성자 주입 받아 사용 중
+   * @param rest
+   * @param traverson
+   */
   public TacoCloudClient(RestTemplate rest, Traverson traverson) {
     this.rest = rest;
     this.traverson = traverson;
@@ -30,8 +35,15 @@ public class TacoCloudClient {
   // GET examples
   //
 
-  /*
-   * Specify parameter as varargs argument
+  /**
+   * 리소스 가져오기(GET)
+   * getForObject param2는 응답이 바인딩 되는 타입
+   *  > 여기서는 JSON 형식의 응답 데이터가 Ingredient로 역직렬화 되어 반환 됨
+   *
+   * 매개변수를 사용하기 위해서는 URI 객체를 구성하여 getForObject 호출
+   * getForObject 대신 getForEntity를 사용하면 ResponseEntity를 반환받을 수 있음
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById(String ingredientId) {
     return rest.getForObject("http://localhost:8080/ingredients/{id}",
@@ -86,18 +98,23 @@ public class TacoCloudClient {
         .getBody();
   }
 
-  //
-  // PUT examples
-  //
-
+  /**
+   * 리소스 쓰기(PUT)
+   * @param ingredient
+   */
   public void updateIngredient(Ingredient ingredient) {
     rest.put("http://localhost:8080/ingredients/{id}",
           ingredient, ingredient.getId());
   }
 
-  //
-  // POST examples
-  //
+  /**
+   * 리소스 추가하기(POST)
+   * postForObject 사용하여 새로 생성한 Ingredient를 반환 받음
+   * postForLocation 새로 생성한 Ingredient URI 반환
+   * postForEntity ReponseEntity 반환 
+   * @param ingredient
+   * @return
+   */
   public Ingredient createIngredient(Ingredient ingredient) {
     return rest.postForObject("http://localhost:8080/ingredients",
         ingredient, Ingredient.class);
@@ -126,10 +143,10 @@ public class TacoCloudClient {
   //   return responseEntity.getBody();
   // }
 
-  //
-  // DELETE examples
-  //
-
+  /**
+   * 리소스 삭제하기(delete)
+   * @param ingredient
+   */
   public void deleteIngredient(Ingredient ingredient) {
     rest.delete("http://localhost:8080/ingredients/{id}",
         ingredient.getId());
