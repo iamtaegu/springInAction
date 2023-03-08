@@ -111,7 +111,7 @@ public class TacoCloudClient {
    * 리소스 추가하기(POST)
    * postForObject 사용하여 새로 생성한 Ingredient를 반환 받음
    * postForLocation 새로 생성한 Ingredient URI 반환
-   * postForEntity ReponseEntity 반환 
+   * postForEntity ReponseEntity 반환
    * @param ingredient
    * @return
    */
@@ -157,6 +157,8 @@ public class TacoCloudClient {
   //
 
   public Iterable<Ingredient> getAllIngredientsWithTraverson() {
+    //제네릭 타입 정보는 런타임 시에 소거(Object화)되기 때문에 타입을 알 기 어려운데,
+    //ParameterizedTypeReference를 사용하면 런타임 시에도 제네릭 타입(Ingredient)을 알 수 있음
     ParameterizedTypeReference<Resources<Ingredient>> ingredientType =
         new ParameterizedTypeReference<Resources<Ingredient>>() {};
 
@@ -180,6 +182,11 @@ public class TacoCloudClient {
                               Ingredient.class);
   }
 
+  /**
+   * Traverson를 사용하면 HATEOAS가 활성화 된 API를 이동하면서
+   * API 리소스를 가져올 수 있음
+   * @return
+   */
   public Iterable<Taco> getRecentTacosWithTraverson() {
     ParameterizedTypeReference<Resources<Taco>> tacoType =
         new ParameterizedTypeReference<Resources<Taco>>() {};
