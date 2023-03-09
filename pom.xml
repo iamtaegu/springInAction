@@ -29,7 +29,7 @@
       <module>tacocloud-restclient</module>
       <module>tacocloud-security</module>
       <module>tacocloud-web</module>
-      <module>tacocloud-ui</module>
+      <!--<module>tacocloud-ui</module>-->
     </modules>
 
 </project>

@@ -7,29 +7,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tacocloud-ui" />
         <module name="tacocloud-security" />
         <module name="tacocloud-restclient" />
         <module name="tacocloud-api" />
         <module name="tacocloud-domain" />
+        <module name="taco-cloud (1)" />
         <module name="tacocloud-data" />
         <module name="tacocloud-web" />
-        <module name="taco-cloud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="git_springInAction" target="1.8" />
+      <module name="tacocloud-ui" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="taco-cloud" options="-parameters" />
-      <module name="tacocloud-api" options="" />
-      <module name="tacocloud-data" options="" />
-      <module name="tacocloud-domain" options="" />
-      <module name="tacocloud-restclient" options="" />
-      <module name="tacocloud-security" options="" />
-      <module name="tacocloud-ui" options="" />
+      <module name="taco-cloud" options="" />
+      <module name="taco-cloud (1)" options="-parameters" />
+      <module name="tacocloud-api" options="-parameters" />
+      <module name="tacocloud-data" options="-parameters" />
+      <module name="tacocloud-domain" options="-parameters" />
+      <module name="tacocloud-restclient" options="-parameters" />
+      <module name="tacocloud-security" options="-parameters" />
+      <module name="tacocloud-ui" options="-parameters" />
       <module name="tacocloud-web" options="-parameters" />
     </option>
   </component>
