@@ -24,6 +24,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="git_springInAction" target="1.8" />
+      <module name="taco-cloud" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
