@@ -22,7 +22,7 @@ public class JmsOrderMessagingService implements OrderMessagingService {
   /**
    * jms.convertAndSend
    * param1는 도착지, 도착지를 생략하면 application.yml에 있는 default 도착지
-   * parma2는 
+   * parma2는
    * @param order
    */
   @Override
