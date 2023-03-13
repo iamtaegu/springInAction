@@ -10,29 +10,26 @@
         <module name="tacocloud-restclient" />
         <module name="tacocloud-messaging-jms" />
         <module name="tacocloud-domain" />
-        <module name="taco-cloud (1)" />
         <module name="tacocloud-data" />
         <module name="taco-cloud" />
+        <module name="tacocloud-email" />
         <module name="tacocloud-kitchen" />
         <module name="tacocloud-ui" />
         <module name="tacocloud-security" />
         <module name="tacocloud-api" />
         <module name="tacocloud-messaging-kafka" />
-        <module name="tacocloud-web" />
         <module name="tacocloud-messaging-rabbitmq" />
+        <module name="tacocloud-web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="git_springInAction" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="taco-cloud" options="-parameters" />
-      <module name="taco-cloud (1)" options="-parameters" />
       <module name="tacocloud-api" options="-parameters" />
       <module name="tacocloud-data" options="-parameters" />
       <module name="tacocloud-domain" options="-parameters" />
+      <module name="tacocloud-email" options="-parameters" />
       <module name="tacocloud-kitchen" options="-parameters" />
       <module name="tacocloud-messaging-jms" options="-parameters" />
       <module name="tacocloud-messaging-kafka" options="-parameters" />
