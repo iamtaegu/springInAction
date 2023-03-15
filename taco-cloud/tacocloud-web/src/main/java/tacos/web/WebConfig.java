@@ -10,6 +10,10 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+  /**
+   * 뷰 컨트롤러 등록
+   * @param registry
+   */
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
     registry.addViewController("/").setViewName("home");

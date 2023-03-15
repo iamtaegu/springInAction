@@ -55,6 +55,15 @@ public class OrderController {
     return "orderForm";
   }
 
+  /**
+   * 검사를 수행한다는 것을 지정
+   *  > @Valid
+   * @param order
+   * @param errors
+   * @param sessionStatus
+   * @param user
+   * @return
+   */
   @PostMapping
   public String processOrder(@Valid Order order, Errors errors, 
       SessionStatus sessionStatus, 

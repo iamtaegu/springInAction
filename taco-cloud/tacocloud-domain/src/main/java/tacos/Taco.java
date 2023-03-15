@@ -15,6 +15,10 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import lombok.Data;
 
+/**
+ * 유효성 검사가 필요한 필드에 검사 규칙을 선언
+ *  > @NotNull / @Size
+ */
 @Data
 @Entity
 @RestResource(rel="tacos", path="tacos")

@@ -21,6 +21,9 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 
 import lombok.Data;
 
+/**
+ * 유효성 검사가 필요한 필드에 검사 규칙을 선언
+ */
 @Data
 @Entity
 @Table(name="Taco_Order")
