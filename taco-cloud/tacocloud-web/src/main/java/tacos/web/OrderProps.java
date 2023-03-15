@@ -10,6 +10,11 @@ import org.springframework.validation.annotation.Validated;
 import lombok.Data;
 
 @Component
+/**
+ * 우리의 구성 속성 사용하기
+ * application.yml 에 정의되어 있음
+ */
+
 @ConfigurationProperties(prefix="taco.orders")
 @Data
 @Validated

@@ -1,8 +1,14 @@
+# 서블릿 컨테이너 리스닝 포트 속성 지정
+server:
+  port: 8081
+
 security:
   user:
     name: buzz
     password: infinity
 
+#우리의 구성 속성 설정
+#OrderController에서 사용
 taco:
   orders:
     pageSize: 10
@@ -42,6 +48,8 @@ spring:
     password: tacopassword
     
 logging:
+  path: ./
+  file: tacosLog.log
   level:
     tacos: WARN
     

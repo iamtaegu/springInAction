@@ -9,8 +9,8 @@
         <module name="tacocloud-restclient" />
         <module name="tacocloud-messaging-jms" />
         <module name="tacocloud-domain" />
+        <module name="taco-cloud (1)" />
         <module name="tacocloud-data" />
-        <module name="taco-cloud" />
         <module name="tacocloud-email" />
         <module name="tacocloud-kitchen" />
         <module name="tacocloud-ui" />
@@ -24,7 +24,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="taco-cloud" options="-parameters" />
+      <module name="taco-cloud" options="" />
+      <module name="taco-cloud (1)" options="-parameters" />
       <module name="tacocloud-api" options="-parameters" />
       <module name="tacocloud-data" options="-parameters" />
       <module name="tacocloud-domain" options="-parameters" />
