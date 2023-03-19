@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tacocloud-restclient" />
         <module name="tacocloud-messaging-jms" />
         <module name="tacocloud-domain" />
         <module name="taco-cloud (1)" />
