@@ -25,6 +25,7 @@ public class TacoCloudClient {
   private RestTemplate rest;
   private Traverson traverson;
 
+  // RestTemplate, Traverson DI
   public TacoCloudClient(RestTemplate rest, Traverson traverson) {
     this.rest = rest;
     this.traverson = traverson;
@@ -33,17 +34,23 @@ public class TacoCloudClient {
   //
   // GET examples
   //
-  
-  /*
-   * Specify parameter as varargs argument
+
+  /**
+   * 두 번째 매겨변수는 응답 데이터 타입
+   * JSON 직렬화 응답을 Ingredient 객체 타입으로 역직렬화 해서 반환
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById(String ingredientId) {
     return rest.getForObject("http://localhost:8080/ingredients/{id}", 
                              Ingredient.class, ingredientId);
   }
-    
-  /*
-   * Specify parameters with a map
+
+  /**
+   * URI 매개변수를 Map 형태로 전달할 수 있음
+   * 매개변수 값은 Map key와 매칭
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById2(String ingredientId) {
     Map<String, String> urlVariables = new HashMap<>();
@@ -51,9 +58,11 @@ public class TacoCloudClient {
     return rest.getForObject("http://localhost:8080/ingredients/{id}",
         Ingredient.class, urlVariables);  
   }
-    
-  /*
-   * Request with URI instead of String
+
+  /**
+   * URI 객체를 생성해서 getForObject 호출 할 수 있음
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById3(String ingredientId) {
     Map<String, String> urlVariables = new HashMap<>();
@@ -63,9 +72,13 @@ public class TacoCloudClient {
               .build(urlVariables);
     return rest.getForObject(url, Ingredient.class);
   }
-    
-  /*
-   * Use getForEntity() instead of getForObject()
+
+  /**
+   * HTTP response body 외에
+   * HTTP response 내용 전체가 필요하면
+   * getForEntity
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById4(String ingredientId) {
     ResponseEntity<Ingredient> responseEntity =
@@ -81,29 +94,44 @@ public class TacoCloudClient {
             HttpMethod.GET, null, new ParameterizedTypeReference<List<Ingredient>>() {})
         .getBody();
   }
-  
-  //
-  // PUT examples
-  //
+
+  /**
+   * HTTP PUT
+   * @param ingredient
+   */
   
   public void updateIngredient(Ingredient ingredient) {
     rest.put("http://localhost:8080/ingredients/{id}",
           ingredient, ingredient.getId());
   }
-  
-  //
-  // POST examples
-  //
+
+  /**
+   * 두 번째 매개변수는 전달 객체
+   * 세 번째 매겨변수는 응답 데이터 타입
+   * @param ingredient
+   * @return
+   */
   public Ingredient createIngredient(Ingredient ingredient) {
     return rest.postForObject("http://localhost:8080/ingredients",
         ingredient, Ingredient.class);
   }
-  
+
+  /**
+   * 전달한 객체에 접근할 수 있는 URI 반환
+   * @param ingredient
+   * @return
+   */
   public URI createIngredient2(Ingredient ingredient) {
     return rest.postForLocation("http://localhost:8080/ingredients",
         ingredient, Ingredient.class);
   }
-  
+
+  /**
+   * HTTP response 전체 내용 반환
+   * postForEntity
+   * @param ingredient
+   * @return
+   */
   public Ingredient createIngredient3(Ingredient ingredient) {
     ResponseEntity<Ingredient> responseEntity =
            rest.postForEntity("http://localhost:8080/ingredients",
@@ -113,10 +141,11 @@ public class TacoCloudClient {
              responseEntity.getHeaders().getLocation());
     return responseEntity.getBody();
   }
-  
-  //
-  // DELETE examples
-  //
+
+  /**
+   * HTTP delete
+   * @param ingredient
+   */
   
   public void deleteIngredient(Ingredient ingredient) {
     rest.delete("http://localhost:8080/ingredients/{id}",

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/taco-cloud.iml" filepath="$PROJECT_DIR$/.idea/taco-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tacocloud-domain/tacocloud-domain.iml" filepath="$PROJECT_DIR$/tacocloud-domain/tacocloud-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/tacocloud-ui/tacocloud-ui.iml" filepath="$PROJECT_DIR$/tacocloud-ui/tacocloud-ui.iml" />
     </modules>
   </component>
