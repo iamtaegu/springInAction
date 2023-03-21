@@ -93,7 +93,9 @@
   		<scope>test</scope>
 		</dependency>
 
-		<!-- For the sake of the configuration properties class -->
+		<!-- 구성 속성 메타데이터 처리기
+			@ConfigurationProperties 애노테이션이 지정된 클래스에 관한 메타데이터 생성
+		-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>

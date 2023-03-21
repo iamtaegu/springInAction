@@ -9,6 +9,7 @@ security:
 
 #우리의 구성 속성 설정
 #OrderController에서 사용
+#구성 속성 메타데이터는 classpath:META-INF/*.json
 taco:
   orders:
     pageSize: 10
