@@ -11,6 +11,10 @@
     <parent>
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-parent</artifactId>
+        <!-- 스프링부트 2.0.4 버전 사용
+          의존성(dependency)에서 artifactID에 starter가 포함 돼 있고
+          버전 명시가 안돼 있으면 이 버전을 따라감
+        -->
   		<version>2.0.4.RELEASE</version>
   		<relativePath/>
   	</parent>
