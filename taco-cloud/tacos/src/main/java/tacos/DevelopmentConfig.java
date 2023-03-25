@@ -14,7 +14,7 @@ import tacos.data.PaymentMethodRepository;
 import tacos.data.TacoRepository;
 import tacos.data.UserRepository;
 
-@Profile("!prod")
+@Profile("!prod") //prod 프로파일이 (application-prod) 활성화 되면 아래 인스턴스를 빈 등록
 @Configuration
 public class DevelopmentConfig {
 

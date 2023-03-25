@@ -25,6 +25,9 @@ public class OrderController {
   
   private OrderRepository orderRepo;
 
+  /**
+   * 홀더 클래스 사용을 통한 @ConfiguraitonProperties 불필요한 애노테이션 제거
+   */
   private OrderProps props;
 
   public OrderController(OrderRepository orderRepo, 
