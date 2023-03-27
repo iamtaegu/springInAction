@@ -14,9 +14,16 @@ public class FluxCreationTests {
 
   @Test
 	public void createAFlux_just() {
+	  //5개 스트링 객체로부터 Flux 객체 생성
+
     Flux<String> fruitFlux = Flux
 	      .just("Apple", "Orange", "Grape", "Banana", "Strawberry");
-    
+	  /**
+	   * subscriber(구독자), StepVerifier
+	   * Flux 타입의 리액티브 인스턴스를 구독하고
+	   * 스트림을 통해 전달되는 데이터에 assersion을 적용해줌
+	   * 그리고 기대하는 데이터가 전달됐는지 검사해줌
+	   */
     StepVerifier.create(fruitFlux)
         .expectNext("Apple")
         .expectNext("Orange")
@@ -25,7 +32,11 @@ public class FluxCreationTests {
         .expectNext("Strawberry")
         .verifyComplete();
 	}
-	
+
+	/**
+	 * 컬렉션으로부터 Flux 타입의 리액티브 인스턴스 생성
+	 * 	>컬렉션, String List
+	 */
 	@Test
 	public void createAFlux_fromArray() {
 	  String[] fruits = new String[] {
@@ -41,7 +52,11 @@ public class FluxCreationTests {
         .expectNext("Strawberry")
         .verifyComplete();
 	}
-	
+
+	/**
+	 * 컬렉션으로부터 Flux 타입의 리액티브 인스턴스 생성
+	 * 	>컬렉션, Iterable subClass
+	 */
 	@Test
 	public void createAFlux_fromIterable() {
 	  List<String> fruitList = new ArrayList<>();
@@ -62,6 +77,9 @@ public class FluxCreationTests {
         .verifyComplete();
 	}
 
+	/**
+	 * Stream 객체로부터 Flux 타입의 리액티브 인스턴스 생성
+	 */
 	 @Test
 	 public void createAFlux_fromStream() {
 	   Stream<String> fruitStream = 
@@ -77,13 +95,16 @@ public class FluxCreationTests {
 	       .expectNext("Strawberry")
 	       .verifyComplete();
 	 }
-	 
-	 @Test
+
+	/**
+	 * Counter 역할의 Flux
+	 */
+	@Test
 	 public void createAFlux_interval() {
 	   Flux<Long> intervalFlux = 
 	       Flux.interval(Duration.ofSeconds(1))
 	           .take(5);
-	   
+	   //0부터 시작하여 4까지 증가
      StepVerifier.create(intervalFlux)
          .expectNext(0L)
          .expectNext(1L)
