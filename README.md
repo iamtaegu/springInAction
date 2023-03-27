@@ -6,3 +6,7 @@
 ### ch02
 1. 유효성을 검사할 클래스에 검사 규칙을 선언
 1. 유효성 검사를 수행하는 컨트롤러 메서드에 검사를 수행한다는 것을 지정
+
+### CH10
+1. add reactive programming 
+1. test reacter 
