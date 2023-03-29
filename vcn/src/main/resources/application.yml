@@ -1,0 +1,5 @@
+security:
+  user:
+    name: buzz
+    password: infinity
+
