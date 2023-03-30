@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="tacocloud-ui" />
-        <module name="tacocloud-domain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
