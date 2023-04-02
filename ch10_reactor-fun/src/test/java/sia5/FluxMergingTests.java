@@ -8,13 +8,19 @@ import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 import reactor.util.function.Tuple2;
 
+/**
+ * 10.3.2 리액티브 타입 조합하기
+ */
 public class FluxMergingTests {
 
+  /**
+   * Flux는 가능한 빨리 데이터를 방출
+   *  > delayElements 오퍼레이션을 사용해서 조금 느리게 방출
+   *   > foodFlux가 다음에 방출되도록 delaySubscription 오퍼레이션 사용
+   */
   @Test
   public void mergeFluxes() {
-    
-    // delays needed to avoid the first flux from streaming the
-    // data through before subscribing to the second flux.
+
     
     Flux<String> characterFlux = Flux
         .just("Garfield", "Kojak", "Barbossa")
@@ -23,7 +29,11 @@ public class FluxMergingTests {
         .just("Lasagna", "Lollipops", "Apples")
         .delaySubscription(Duration.ofMillis(250))
         .delayElements(Duration.ofMillis(500));
-    
+
+    /**
+     * 두 개의 Flux 타입의 리액티브 인스턴스가 일정한 속도로 방출 되기 때문에
+     * 번갈아 가면서 mergedFlux에 설정됨
+     */
     Flux<String> mergedFlux = characterFlux.mergeWith(foodFlux);
 
     StepVerifier.create(mergedFlux)
@@ -42,7 +52,10 @@ public class FluxMergingTests {
         .just("Garfield", "Kojak", "Barbossa");
     Flux<String> foodFlux = Flux
         .just("Lasagna", "Lollipops", "Apples");
-    
+
+    /**
+     * 각 Flux 타입의 리액티브 인스턴스로부터 한 항목씩 번갈아 가져와 새로운 Flux를 생성
+     */
     Flux<Tuple2<String, String>> zippedFlux = 
         Flux.zip(characterFlux, foodFlux);
     
@@ -65,7 +78,11 @@ public class FluxMergingTests {
         .just("Garfield", "Kojak", "Barbossa");
     Flux<String> foodFlux = Flux
         .just("Lasagna", "Lollipops", "Apples");
-    
+
+    /**
+     * zip으로 생성되는 Tuple2 형태가 아니라
+     * 우리가 원하는 객체를 생성하고 싶으면 함수를 제공하면 됨
+     */
     Flux<String> zippedFlux = 
         Flux.zip(characterFlux, foodFlux, (c, f) -> c + " eats " + f);
     
@@ -84,7 +101,10 @@ public class FluxMergingTests {
     Flux<String> slowFlux = Flux.just("tortoise", "snail", "sloth")
           .delaySubscription(Duration.ofMillis(100));
     Flux<String> fastFlux = Flux.just("hare", "cheetah", "squirrel");
-    
+
+    /**
+     * 두 Flux 타입의 리액티브 인스턴스에서 먼저 방출되는 값만 취함
+     */
     Flux<String> firstFlux = Flux.first(slowFlux, fastFlux);
     
     StepVerifier.create(firstFlux)

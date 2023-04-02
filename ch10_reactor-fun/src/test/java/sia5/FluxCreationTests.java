@@ -12,30 +12,47 @@ import reactor.test.StepVerifier;
 
 public class FluxCreationTests {
 
-  @Test
-	public void createAFlux_just() {
-	  //5개 스트링 객체로부터 Flux 객체 생성
+	@Test
+	public void createFlux_just() {
 
-    Flux<String> fruitFlux = Flux
-	      .just("Apple", "Orange", "Grape", "Banana", "Strawberry");
+		Flux<String> fruitFlux = Flux.just("test1", "test2");
+
+		fruitFlux.subscribe( // 구독자를 추가하는 즉시 데이터는 방출 됨
+			f -> System.out.println(f)
+		);
+
+	}
+
+	@Test
+	public void createAFlux_just() {
+
 	  /**
-	   * subscriber(구독자), StepVerifier
-	   * Flux 타입의 리액티브 인스턴스를 구독하고
-	   * 스트림을 통해 전달되는 데이터에 assersion을 적용해줌
-	   * 그리고 기대하는 데이터가 전달됐는지 검사해줌
+	   * just() 메서드(static, 클래스 메서드)를 사용하여
+	   * 5개 스트링 객체로부터 리액티브 타입, Flux 객체 생성
 	   */
-    StepVerifier.create(fruitFlux)
-        .expectNext("Apple")
-        .expectNext("Orange")
-        .expectNext("Grape")
-        .expectNext("Banana")
-        .expectNext("Strawberry")
-        .verifyComplete();
+		Flux<String> fruitFlux = Flux
+			  .just("Apple", "Orange", "Grape", "Banana", "Strawberry");
+		  /**
+		   * subscriber(구독자), StepVerifier
+		   * Flux 타입의 리액티브 인스턴스를 구독하고
+		   * 스트림을 통해 전달되는 데이터에 assersion을 적용해줌
+		   * 	> fruitFLux가 방출한 값들
+		   * 그리고 기대하는 데이터가 전달됐는지 검사해줌
+		   */
+		StepVerifier.create(fruitFlux)
+			.expectNext("Apple")
+			.expectNext("Orange")
+			.expectNext("Grape")
+			.expectNext("Banana")
+			.expectNext("Strawberry")
+			.verifyComplete();
 	}
 
 	/**
-	 * 컬렉션으로부터 Flux 타입의 리액티브 인스턴스 생성
-	 * 	>컬렉션, String List
+	 * 컬렉션으로부터 생성하기
+	 *  > 배열, Iterable 객체, Stream 객체로부터 생성할 수 있음
+	 *
+	 * 배열로부터 Flux 타입의 리액티브 인스턴스 생성
 	 */
 	@Test
 	public void createAFlux_fromArray() {
@@ -55,7 +72,7 @@ public class FluxCreationTests {
 
 	/**
 	 * 컬렉션으로부터 Flux 타입의 리액티브 인스턴스 생성
-	 * 	>컬렉션, Iterable subClass
+	 * 	> Iterable의 구현 컬렉션인 경우 FLux.fromIterable
 	 */
 	@Test
 	public void createAFlux_fromIterable() {
@@ -63,7 +80,7 @@ public class FluxCreationTests {
 	  fruitList.add("Apple");
 	  fruitList.add("Orange");
 	  fruitList.add("Grape");
-    fruitList.add("Banana");
+	  fruitList.add("Banana");
 	  fruitList.add("Strawberry");
 	  
 	  Flux<String> fruitFlux = Flux.fromIterable(fruitList);
@@ -97,7 +114,10 @@ public class FluxCreationTests {
 	 }
 
 	/**
-	 * Counter 역할의 Flux
+	 * 데이터 없이 새 값으로 증가하는 숫자를 방출하는 
+	 * 카운터 역할의 리액티브 인스턴스 생
+	 * 
+	 * Flux 타입의 카운터 리액티브 인스턴스 생성
 	 */
 	@Test
 	 public void createAFlux_interval() {
