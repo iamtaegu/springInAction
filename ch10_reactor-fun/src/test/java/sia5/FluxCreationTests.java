@@ -14,7 +14,7 @@ public class FluxCreationTests {
 
 	@Test
 	public void createFlux_just() {
-
+		// Flux 타입의 리액티브 인스턴스 생성
 		Flux<String> fruitFlux = Flux.just("test1", "test2");
 
 		fruitFlux.subscribe( // 구독자를 추가하는 즉시 데이터는 방출 됨
@@ -50,7 +50,7 @@ public class FluxCreationTests {
 
 	/**
 	 * 컬렉션으로부터 생성하기
-	 *  > 배열, Iterable 객체, Stream 객체로부터 생성할 수 있음
+	 *  > 배열/Iterable 객체/Stream 객체로부터 생성할 수 있음
 	 *
 	 * 배열로부터 Flux 타입의 리액티브 인스턴스 생성
 	 */
@@ -96,6 +96,8 @@ public class FluxCreationTests {
 
 	/**
 	 * Stream 객체로부터 Flux 타입의 리액티브 인스턴스 생성
+	 * 	> 컬렉션에 저장되어 있는 엘리먼트들을 하나씩 순회할 수 있는 형태
+	 * 	> jdk1.8부터 지원하고, 람다식과 함께 사용하면 좋음
 	 */
 	 @Test
 	 public void createAFlux_fromStream() {

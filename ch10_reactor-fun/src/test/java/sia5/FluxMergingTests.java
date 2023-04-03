@@ -45,7 +45,11 @@ public class FluxMergingTests {
         .expectNext("Apples")
         .verifyComplete();
   }
-  
+
+  /**
+   * zip()
+   * 각 Flux 타입의 리액티브 인스턴스로부터 한 항목씩 번갈아 가져와 새로운 Flux를 생성
+   */
   @Test
   public void zipFluxes() {
     Flux<String> characterFlux = Flux
@@ -53,9 +57,7 @@ public class FluxMergingTests {
     Flux<String> foodFlux = Flux
         .just("Lasagna", "Lollipops", "Apples");
 
-    /**
-     * 각 Flux 타입의 리액티브 인스턴스로부터 한 항목씩 번갈아 가져와 새로운 Flux를 생성
-     */
+
     Flux<Tuple2<String, String>> zippedFlux = 
         Flux.zip(characterFlux, foodFlux);
     
@@ -71,7 +73,13 @@ public class FluxMergingTests {
               p.getT2().equals("Apples"))
           .verifyComplete();
   }
-  
+
+  /**
+   * zip()
+   *
+   * zip으로 생성되는 Tuple2 형태가 아니라
+   * 우리가 원하는 객체를 생성하고 싶으면 함수를 제공하면 됨
+   */
   @Test
   public void zipFluxesToObject() {
     Flux<String> characterFlux = Flux
@@ -79,10 +87,6 @@ public class FluxMergingTests {
     Flux<String> foodFlux = Flux
         .just("Lasagna", "Lollipops", "Apples");
 
-    /**
-     * zip으로 생성되는 Tuple2 형태가 아니라
-     * 우리가 원하는 객체를 생성하고 싶으면 함수를 제공하면 됨
-     */
     Flux<String> zippedFlux = 
         Flux.zip(characterFlux, foodFlux, (c, f) -> c + " eats " + f);
     

@@ -17,6 +17,9 @@ import reactor.test.StepVerifier;
  */
 public class FluxTransformingTests {
 
+  /**
+   * skip()
+   */
   @Test
   public void skipAFew() {
     // 앞에 세 개는 건너뛰고 마지막 두 항목만 발행
@@ -41,7 +44,10 @@ public class FluxTransformingTests {
         .expectNext("ninety nine", "one hundred")
         .verifyComplete();
   }
-  
+
+  /**
+   * take()
+   */
   @Test
   public void take() {
     // take는 지정된 수 만큼만 방출
@@ -67,7 +73,9 @@ public class FluxTransformingTests {
   }
 
   /**
-   * skip, take 오퍼레이션을 통해 카운트나 경과 시간을 필터 조건으로 
+   * filter()
+   *
+   * skip, take 오퍼레이션을 통해 카운트나 경과 시간을 필터 조건으로
    * 리액티브 인스턴스의 방출 값을 선택할 수 있으나
    * 
    * 범용적인 필터링에는 filter 오퍼레이션을 사용
@@ -82,7 +90,10 @@ public class FluxTransformingTests {
         .expectNext("Yellowstone", "Yosemite", "Zion")
         .verifyComplete();
   }
-  
+
+  /**
+   * distinct()
+   */
   @Test
   public void distinct() {
     // 발행된적이 없는 값만 발행
@@ -120,7 +131,11 @@ public class FluxTransformingTests {
         .expectNext(new Player("Steve", "Kerr"))
         .verifyComplete();
   }
-  
+
+  /**
+   * flatMap()
+   *  > 비순차적
+   */
   @Test
   public void flatMap() {
     //flatMap은 비동기적 매핑을 수행

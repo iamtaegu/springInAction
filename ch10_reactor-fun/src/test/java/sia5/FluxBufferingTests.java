@@ -45,6 +45,7 @@ public class FluxBufferingTests {
             .subscribeOn(Schedulers.parallel())   
             .log() // log
         ).subscribe();
+
   }
   
   @Test
