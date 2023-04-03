@@ -23,3 +23,22 @@ function fnVcnRequest() {
 
     $(".vcn_section").show();
 }
+
+function fnJsonSend(formName) {
+
+    var queryString = $("#"+formName).serialize();
+    console.log(queryString);
+
+    $.ajax({
+        url:'/vcn', //request 보낼 서버의 경로
+        type:'post', // 메소드(get, post, put 등)
+        data:queryString, //보낼 데이터
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(err) {
+            //서버로부터 응답이 정상적으로 처리되지 못햇을 때 실행
+        }
+    });
+
+}
