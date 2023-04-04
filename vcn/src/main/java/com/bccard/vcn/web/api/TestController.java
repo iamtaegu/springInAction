@@ -1,6 +1,7 @@
 package com.bccard.vcn.web.api;
 
 import com.bccard.vcn.restclient.VisaApiClient;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,20 +22,19 @@ public class TestController {
     private VisaApiClient visApiClient;
 
     @PostMapping
-    public Map<String, String> getVcnV1(HttpServletRequest request) {
+    public String getVcnV1(HttpServletRequest request) throws JsonProcessingException {
         String[] paramNames = request.getParameterValues("action");
         String[] paramValues = request.getParameterValues("action_val");
         Map<String, String> paramMap = new HashMap<>();
 
         for (int i=0;i<paramNames.length;i++) {
-            System.out.println("[TestController] " + paramNames[i] + ":" + paramValues[i]);
-            paramMap.put(paramNames[i], paramValues[i]);
+            if (paramNames[i] != null ) {
+                System.out.println("[TestController] " + paramNames[i] + ":" + paramValues[i]);
+                paramMap.put(paramNames[i], paramValues[i]);
+            }
         }
 
-        Map<String, String> respMap = visApiClient.getVcnV1(paramMap);
-
-        System.out.println("[TestController] paramValue: " + respMap.get("status"));
-        return respMap;
+        return visApiClient.getVcnV1(paramMap);
     }
 
 }
