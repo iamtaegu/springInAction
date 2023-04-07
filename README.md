@@ -10,3 +10,14 @@
 ### CH10
 1. add reactive programming 
 1. test reacter 
+
+### VCN
+* multi moduls
+	1. vcn-api
+	1. vcn-domain	
+	1. vcn-service
+	1. vcn-security
+	1. vcn-web
+	1. vcn
+
+ 
