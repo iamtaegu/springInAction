@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>vcn-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>com.bccard</groupId>
-        <artifactId>vcn</artifactId>
+        <artifactId>vcn-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -19,13 +20,22 @@
         <java.version>11</java.version>
     </properties>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+    </dependencies>
 
 </project>
