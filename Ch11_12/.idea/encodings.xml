@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/dist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-data-mongodb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-data-mongodb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-domain-mongodb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-domain-mongodb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-email/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-email/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-kitchen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-kitchen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-jms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-jms/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-kafka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-kafka/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-rabbitmq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-messaging-rabbitmq/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-restclient/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-restclient/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-ui/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacocloud-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tacocloud-mongodb/tacos/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
