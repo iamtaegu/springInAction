@@ -12,13 +12,14 @@
 1. test reacter 
 
 ### VCN
-* multi moduls
+* multi moduls - built
 	1. vcn-api
 	1. vcn-domain	
 	1. vcn-service
 	1. vcn-security
 	1. vcn-web
 	1. vcn
+* 업무망 진행
 
 ### 리액티브 프로그래밍
 * pom에 사용할 웹 프레임워크를 선택하여 의존성 하나만 추가해야 함 

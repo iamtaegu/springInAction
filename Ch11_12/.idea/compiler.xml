@@ -18,8 +18,8 @@
         <module name="tacocloud-security" />
         <module name="tacocloud-api" />
         <module name="tacocloud-messaging-kafka" />
-        <module name="tacocloud-messaging-rabbitmq" />
         <module name="tacocloud-web" />
+        <module name="tacocloud-messaging-rabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
