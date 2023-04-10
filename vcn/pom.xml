@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.bccard</groupId>
-	<artifactId>vcn</artifactId>
+	<artifactId>vcn-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -22,8 +22,12 @@
 	</properties>
 
     <modules>
-		<module>vcn-main</module>
-        <!--<module>vcn-api</module>-->
+		<module>vcn</module>
+		<module>vcn-domain</module>
+		<module>vcn-service</module>
+		<module>vcn-security</module>
+		<module>vcn-web</module>
+		<module>vcn-api</module>
     </modules>
 
 
