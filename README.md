@@ -12,13 +12,17 @@
 1. test reacter 
 
 ### VCN
-* multi moduls - built
+* multi modules - built
 	1. vcn-api
 	1. vcn-domain	
 	1. vcn-service
 	1. vcn-security
 	1. vcn-web
 	1. vcn
+* multi modules build
+	1. 프로젝트의 전체 모듈을 하나의 애플리케이션으로 빌드
+	1. clean package > war 파일을 생성
+	1. SpringBootApplication 이 포함된 폴더의 war파일로 서버 기동 
 * 업무망 진행
 
 ### 리액티브 프로그래밍
