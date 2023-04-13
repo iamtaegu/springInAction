@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="section vcn_section" id="" th:fragment="requestParam">
+
+    <h3><span>BC-VCN API 파라미터 목록</span></h3>
+
+    <form id="vcn" name="vcn">
+        <input type="button" value="입력값 추가" onclick="javascript:fnAddParam('.param-tbl tbody')">
+        <input type="button" value="JSON 전송" onclick="javascript:fnJsonSend('vcn')">
+
+        <table class="tbl-guide param-tbl sorttable">
+
+            <thead>
+
+            <tr>
+
+                <th scope="col"><span></span></th>
+
+                <th scope="col"><span>parameter name</span></th>
+
+                <th scope="col"><span>parameter value</span></th>
+
+                <th scope="col"><span></span></th>
+
+                <th scope="col"></th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td></td>
+
+                <td>
+                    <input type="text" name="action" value="clientId"/>
+                </td>
+
+                <td>
+                    <input type="text" name="action_val" value="B2BWS_1_1_9999"/>
+                </td>
+
+                <td>required</td>
+
+                <td></td>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+
+                <td>
+                    <input type="text" name="action" value="action"/>
+                </td>
+
+                <td>
+                    <input type="text" name="action_val" value="A"/>
+                </td>
+
+                <td>required</td>
+
+                <td></td>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+
+                <td>
+                    <input type="text" name="action" value="buyerID"/>
+                </td>
+
+                <td>
+                    <input type="text" name="action_val" value="9999"/>
+                </td>
+
+                <td>required</td>
+
+                <td></td>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+
+                <td>
+                    <input type="text" name="action" value="messageId"/>
+                </td>
+
+                <td>
+                    <input type="text" name="action_val" value="1526077012761"/>
+                </td>
+
+                <td>required</td>
+
+                <td></td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+    </form>
+
+</div>

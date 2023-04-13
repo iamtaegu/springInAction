@@ -1,20 +1,22 @@
-package com.bccard.vcn.web.api;
+package com.bccard.web.api;
 
 import com.bccard.vcn.client.restclient.VisaApiClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
 @CrossOrigin(origins = "*")//CORS 허용
 @RequestMapping(path="/vcn",
-                produces = "application/json")
+        produces = "application/json")
 @RestController
 public class TestController {
 

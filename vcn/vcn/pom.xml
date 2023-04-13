@@ -24,6 +24,11 @@
 			<artifactId>vcn-api</artifactId>
 			<version>${vcn.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.bccard</groupId>
+			<artifactId>vcn-web</artifactId>
+			<version>${vcn.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -55,12 +60,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.bccard</groupId>
-			<artifactId>vcn-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+
 	</dependencies>
 
 	<build>
