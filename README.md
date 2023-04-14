@@ -31,3 +31,6 @@
 	* spring-boot-starter-web
 * 스프링 WebFlux
 	* spring-boot-starter-webflux
+
+스프링MVC, WebFlux 혼용 관련 게시글 
+https://mangkyu.tistory.com/257
