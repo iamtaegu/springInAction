@@ -1,4 +1,4 @@
-package com.bccard.vcn.web.api;
+package com.bccard.web.api;
 
 import com.bccard.vcn.client.restclient.VisaApiClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -7,19 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
 @CrossOrigin(origins = "*")//CORS 허용
 @RequestMapping(path="/vcn",
-                produces = "application/json")
+        produces = "application/json")
 @RestController
 public class TestController {
 
     @Autowired
     private VisaApiClient visApiClient;
+
+    @GetMapping
+    public String getVcn() {
+        return "getVcn";
+    }
 
     @PostMapping
     public String getVcnV1(HttpServletRequest request) throws JsonProcessingException {

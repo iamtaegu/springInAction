@@ -16,18 +16,16 @@
 	</parent>
 
 	<properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
 		<vcn.version>${project.version}</vcn.version>
 	</properties>
 
     <modules>
 		<module>vcn</module>
+		<module>vcn-api</module> 
 		<module>vcn-domain</module>
 		<module>vcn-service</module>
 		<module>vcn-security</module>
 		<module>vcn-web</module>
-		<module>vcn-api</module>
     </modules>
 
 
