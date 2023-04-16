@@ -25,6 +25,8 @@
 	1. SpringBootApplication 이 포함된 폴더의 war파일로 서버 기동 
 * 업무망 진행
 
+* vcn-api, vcn-web에서 등록한 controller 빈이 동작하지 않음 
+
 ### 리액티브 프로그래밍
 * pom에 사용할 웹 프레임워크를 선택하여 의존성 하나만 추가해야 함 
 * 스프링 MVC 
