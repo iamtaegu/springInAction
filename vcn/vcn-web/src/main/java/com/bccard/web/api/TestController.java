@@ -11,10 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-@CrossOrigin(origins = "*")//CORS 허용
-@RequestMapping(path="/vcn",
-        produces = "application/json")
 @RestController
+@RequestMapping(path="/vcn") //, produces = "application/json")
+@CrossOrigin(origins = "*")//CORS 허용
 public class TestController {
 
     @Autowired
@@ -22,7 +21,7 @@ public class TestController {
 
     @GetMapping
     public String getVcn() {
-        return "getVcn";
+        return "testVcn";
     }
 
     @PostMapping

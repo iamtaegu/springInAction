@@ -4,12 +4,8 @@ import com.bccard.vcn.client.restclient.VisaApiClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
@@ -17,16 +13,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-@CrossOrigin(origins = "*")//CORS 허용
-@RequestMapping(path="/vcn",
-        produces = "application/json")
 @RestController
+@RequestMapping(path="/mainvcn") //, produces = "application/json")
+@CrossOrigin(origins = "*")//CORS 허용
 public class TestController {
 
     @Autowired
     private VisaApiClient visApiClient;
-    @Autowired
-    private WebClient webClient;
 
     @GetMapping
     public String getVcn() {
@@ -49,7 +42,7 @@ public class TestController {
         return visApiClient.getVcnV1(paramMap);
     }
 
-    @GetMapping("get_webClinet")
+    /* @GetMapping("get_webClinet")
     public String test_get_webClinet() {
         System.out.println(webClient.get().retrieve());
 
@@ -67,9 +60,9 @@ public class TestController {
 
 
         return "ok";
-    }
+    } */
 
-    @GetMapping("get_ingredient")
+   /* @GetMapping("get_ingredient")
     public String test_get_ingredient() {
 
         //WebClient 인스턴스 생성
@@ -86,6 +79,6 @@ public class TestController {
                     System.out.println(error.toString());
                 } ); //
         return "ok";
-    }
+    } */
 
 }
