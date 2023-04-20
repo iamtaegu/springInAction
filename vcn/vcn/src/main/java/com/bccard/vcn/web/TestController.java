@@ -12,6 +12,8 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+import reactor.core.publisher.Flux;
+
 @Slf4j
 @RestController
 @RequestMapping(path="/mainvcn") //, produces = "application/json")
@@ -41,6 +43,12 @@ public class TestController {
 
         return visApiClient.getVcnV1(paramMap);
     }
+
+    @GetMapping("get_flux")
+    public Flux<String> getFlux() {
+        return Flux.just("getFlux");
+    }
+
 
     /* @GetMapping("get_webClinet")
     public String test_get_webClinet() {
