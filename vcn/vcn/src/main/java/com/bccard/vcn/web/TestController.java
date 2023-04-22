@@ -15,7 +15,7 @@ import java.util.Map;
 import reactor.core.publisher.Flux;
 
 @Slf4j
-@RestController
+//@RestController
 @RequestMapping(path="/mainvcn") //, produces = "application/json")
 @CrossOrigin(origins = "*")//CORS 허용
 public class TestController {

@@ -26,6 +26,9 @@
 * 업무망 진행
 
 * vcn-api, vcn-web에서 등록한 controller 빈이 동작하지 않음 
+	* 컴포넌트 스캔 패키지가 맞지 않았음
+* spring-boot-starter-webflux 라이브러리를 사용하면 WebFlux와 Spring MVC를 함께 사용할 수 있음 
+	* 이를 통해 기존 애플리케이션에 비동기적인 처리 방식을 추가할 수 있음 
 
 ### 리액티브 프로그래밍
 * pom에 사용할 웹 프레임워크를 선택하여 의존성 하나만 추가해야 함 

@@ -1,10 +1,11 @@
-package com.bccard.web.api;
+package com.bccard.vcn.web.api;
 
 import com.bccard.vcn.client.restclient.VisaApiClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -22,6 +23,11 @@ public class TestController {
     @GetMapping
     public String getVcn() {
         return "testVcn";
+    }
+
+    @GetMapping("get_flux")
+    public Flux<String> getFlux() {
+        return Flux.just("getFLux");
     }
 
     @PostMapping
