@@ -25,6 +25,12 @@ public class TestController {
         return "testVcn";
     }
 
+    @ResponseBody
+    @GetMapping("requestBody")
+    public String requestBodyToJsonString(@RequestBody String messageBody) {
+        return messageBody;
+    }
+
     @GetMapping("get_flux")
     public Flux<String> getFlux() {
         return Flux.just("getFLux");
