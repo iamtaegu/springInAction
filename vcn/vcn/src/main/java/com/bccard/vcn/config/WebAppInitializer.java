@@ -11,9 +11,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
-public class WebAppInitializer implements WebApplicationInitializer {
+public class WebAppInitializer { //implements WebApplicationInitializer {
 
-    @Override
+   /* @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         // Create the Spring MVC application context
         AnnotationConfigWebApplicationContext mvcContext = new AnnotationConfigWebApplicationContext();
@@ -33,11 +33,11 @@ public class WebAppInitializer implements WebApplicationInitializer {
         registration.addMapping("/mvc/*");
 
         // Create and configure the WebFluxHandler
-        //WebHandler webHandler = WebHttpHandlerBuilder.applicationContext(webfluxContext).build();
+        WebHandler webHandler = WebHttpHandlerBuilder.applicationContext(webfluxContext).build();
 
         // Register the WebFluxHandler with the ServletContext
         ServletRegistration.Dynamic webfluxRegistration = servletContext.addServlet("webflux", new HttpWebHandlerAdapter(webHandler));
         webfluxRegistration.setLoadOnStartup(1);
         webfluxRegistration.addMapping("/webflux/*");
-    }
+    } */
 }
