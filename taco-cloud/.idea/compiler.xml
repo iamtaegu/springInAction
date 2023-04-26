@@ -9,8 +9,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="tacocloud-restclient" />
         <module name="tacocloud-messaging-jms" />
-        <module name="tacocloud-domain" />
         <module name="taco-cloud (1)" />
+        <module name="tacocloud-domain" />
         <module name="tacocloud-data" />
         <module name="tacocloud-email" />
         <module name="tacocloud-kitchen" />
@@ -18,8 +18,8 @@
         <module name="tacocloud-security" />
         <module name="tacocloud-api" />
         <module name="tacocloud-messaging-kafka" />
-        <module name="tacocloud-messaging-rabbitmq" />
         <module name="tacocloud-web" />
+        <module name="tacocloud-messaging-rabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

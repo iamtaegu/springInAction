@@ -21,7 +21,7 @@
 
     <modules>
 		<module>vcn</module>
-		<module>vcn-api</module> 
+		<!--<module>vcn-api</module> -->
 		<module>vcn-domain</module>
 		<module>vcn-service</module>
 		<module>vcn-security</module>

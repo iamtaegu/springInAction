@@ -39,11 +39,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.bccard</groupId>
-            <artifactId>vcn-api</artifactId>
-            <version>${vcn.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.bccard</groupId>-->
+<!--            <artifactId>vcn-api</artifactId>-->
+<!--            <version>${vcn.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.bccard</groupId>
             <artifactId>vcn-domain</artifactId>

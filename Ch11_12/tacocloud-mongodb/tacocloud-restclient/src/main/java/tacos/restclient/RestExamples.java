@@ -20,6 +20,7 @@ import tacos.Ingredient;
 @Slf4j
 public class RestExamples {
 
+
   public static void main(String[] args) {
     SpringApplication.run(RestExamples.class, args);
   }

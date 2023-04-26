@@ -1,6 +1,5 @@
 package com.bccard.vcn.restclient.client;
 
-import com.bccard.vcn.client.restclient.VisaApiClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -13,22 +12,22 @@ import java.util.Map;
 @SpringBootTest
 public class VisaApiTests {
 
-    @Autowired
-    private VisaApiClient visaApiClient;
+//    @Autowired
+//    private VisaApiClient visaApiClient;
     @Autowired
     private ObjectMapper om;
 
     @Test
     public void visaApi_requisitionService() throws JsonProcessingException {
-        String resp = visaApiClient.getVcnV1(new HashMap<>());
-
-        Map<String, Object> respMap = om.readValue(resp, Map.class);
-
-        try{
-            respMap.forEach((k, v) -> System.out.println(k + ":" + v));
-        }catch(Exception e){
-            e.getMessage();
-        }
+//        String resp = visaApiClient.getVcnV1(new HashMap<>());
+//
+//        Map<String, Object> respMap = om.readValue(resp, Map.class);
+//
+//        try{
+//            respMap.forEach((k, v) -> System.out.println(k + ":" + v));
+//        }catch(Exception e){
+//            e.getMessage();
+//        }
 
     }
 
