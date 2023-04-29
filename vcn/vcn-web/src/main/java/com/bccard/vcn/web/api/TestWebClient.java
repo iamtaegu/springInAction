@@ -32,6 +32,8 @@ public class TestWebClient {
         Flux<Ingredient> ingredient = webClient.get()
                 .uri("/ingredients")
                 .retrieve()
+                .onStatus(HttpStatus::is4xxClientError,
+                        response -> Mono.just(new UnknownError()))
                 //.onStatus(HttpStatus::is5xxServerError,
                 .bodyToFlux(Ingredient.class);
 
@@ -68,6 +70,28 @@ public class TestWebClient {
         //return returnMono;
 
         return Mono.just(new Ingredient("100", "100", Ingredient.Type.SAUCE));
+    }
+
+    /**
+     * 응답 헤더 값에 X_UNAVAILABLE 포함될 수 있는 가정하에 사용될 수 있음
+     */
+    @ResponseBody
+    @GetMapping("/getExchange")
+    public Mono<Ingredient> testGetExchange(@RequestParam String ingredientID) {
+
+        Mono<Ingredient> ingredientMono = webClient
+                .get()
+                .uri("/ingredients/{id}", ingredientID)
+                .exchange()
+                .flatMap(cr -> {
+                    if (cr.headers().header("X_UNAVAILABLE").contains("true")) {
+                        return Mono.empty();
+                    }
+                    return Mono.just(cr);
+                })
+                .flatMap(cr -> cr.bodyToMono(Ingredient.class));
+
+        return ingredientMono;
     }
 
 }

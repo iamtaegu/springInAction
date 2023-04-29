@@ -24,9 +24,15 @@
 <!--			<artifactId>vcn-api</artifactId>-->
 <!--			<version>${vcn.version}</version>-->
 <!--		</dependency>-->
+
 		<dependency>
 			<groupId>com.bccard</groupId>
 			<artifactId>vcn-web</artifactId>
+			<version>${vcn.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.bccard</groupId>
+			<artifactId>vcn-security</artifactId>
 			<version>${vcn.version}</version>
 		</dependency>
 
