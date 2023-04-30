@@ -35,6 +35,11 @@
 			<artifactId>vcn-security</artifactId>
 			<version>${vcn.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.bccard</groupId>
+			<artifactId>vcn-data</artifactId>
+			<version>${vcn.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

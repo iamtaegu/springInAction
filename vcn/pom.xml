@@ -26,7 +26,8 @@
 		<module>vcn-service</module>
 		<module>vcn-security</module>
 		<module>vcn-web</module>
-    </modules>
+		<module>vcn-data</module>
+	</modules>
 
 
 </project>
