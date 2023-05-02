@@ -7,6 +7,7 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
@@ -30,13 +31,11 @@ public class SecurityConfig {
                    .pathMatchers("/security","/WebSecurity").hasAuthority("ADMIN")
                    .pathMatchers("/h2-console").hasAnyAuthority("USER", "ADMIN")
                    .anyExchange().permitAll() //anyExchange가
+                 //.and().httpBasic()
                 .and()
-                    .httpBasic()
-                .and()
-                    .formLogin()
-                .and()
-                  .csrf().disable() // disable csrf protection
-                  .headers().frameOptions().disable() // disable X-Frame-Options header
+                    .formLogin()//login page redirect
+                 //.and().csrf().disable() // disable csrf protection
+                 // .headers().frameOptions().disable() // disable X-Frame-Options header
                 .and()
                 .build();
     }
@@ -59,15 +58,17 @@ public class SecurityConfig {
      */
     @Bean
     public MapReactiveUserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("user").password("userpassword").roles("USER").build();
-        UserDetails admin = User.withUsername("admin").password("adminpassword").roles("ADMIN").build();
+        // !bccard1982:$2y$04$dcqDwT5Rh65I26xfEN2jrOPmvlS8KvV515Ir/SK/VCZU.uRnK4swC
+        UserDetails admin = User.withUsername("admin").password("$2y$04$dcqDwT5Rh65I26xfEN2jrOPmvlS8KvV515Ir/SK/VCZU.uRnK4swC").roles("ADMIN").build();
+        // 20181049, 20181049
+        UserDetails user = User.withUsername("20181049").password("$2y$04$ewM4R6N5jsZLSl3z08UgduhOdM.foRUA9UDYaqbApxdoQT3dVypwm").roles("ADMIN").build();
         return new MapReactiveUserDetailsService(user, admin);
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new NoEncodingPasswordEncoder(); // bcrypt를 해싱 암호화한다
-
+        //return new NoEncodingPasswordEncoder();
+        return new BCryptPasswordEncoder(); //bcrypt 해싱 암호화
     }
 
 
