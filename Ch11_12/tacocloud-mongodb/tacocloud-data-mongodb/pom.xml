@@ -30,6 +30,26 @@
 			<version>${tacocloud.version}</version>
 		</dependency>
 
+<!--		리액티브 아닌 몽고DB 의존성
+			<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+<!--		</dependency>-->
+
+<!--		Flapdoodle 내장 데이터베이스(h2, 인메모리 관계형 데이터베이스 / 인메모리 NoSql 데이터베이스 -->
+<!--		<dependency>-->
+<!--			<groupId>de.flapdoodle.embed</groupId>-->
+<!--			<artifactId>de.flapdoodle.embed.mongo</artifactId>-->
+<!--		</dependency>-->
+
+		<!--
+			JPA를 사용한 관계형 데이터베이스에 저장하는 대신
+			스프링 데이터를 사용해서 몽고디비에 저장
+			따라서 스프링 데이터 JPA 스타터 의존성과 모든 관계형 데이터베이스 의존성 삭제해야 함
+
+			아래 의존성 추가로 스프링 데이터 리액티브 몽고DB 지원을 활성화하는 자동-구성이 수행
+				> 기본적으로 몽고DB가 로컬로 실행되고, 27017 포트 리스닝
+		-->
 		<!-- Necessary Boot starters -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
