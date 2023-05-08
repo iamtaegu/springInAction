@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
-@Document
+@Document // 도메인 타입을 몽고DB 문서로 매핑
 public class Ingredient {
   
   @Id
