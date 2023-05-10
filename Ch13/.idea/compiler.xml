@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ingredient-service" />
+        <module name="service-registry" />
+        <module name="ingredient-client" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ingredient-client" target="1.8" />
+      <module name="ingredient-service" target="1.8" />
+      <module name="service-registry" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
