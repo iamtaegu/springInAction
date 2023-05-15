@@ -1,6 +1,7 @@
+# 서비스 포트 충돌을 막기 위해 0으로 설정
 server:
   port: 0
-  
+# 아래 이름으로 유레카에 등록됨
 spring:
   application:
     name: ingredient-service

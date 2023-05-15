@@ -1,16 +1,21 @@
 server:
   port: 8761
-  
+
+# 개발 환경에서는 개발 고가용성을 위해
+# 유레카 단일 서버로 구성
 eureka:
   instance:
     hostname: localhost
   client:
+#  아래 두 속성의 기본값을 true이고,
+#  유레카는 기본적으로 다른 유레카 서버로부터 레지스트리 정보를 가져오며,
+#  다른 유레카 서버의 서비스로 자신을 등록해야 한다는 것을 나타냄
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
-    enable-self-preservation: false
+    enable-self-preservation: false #자체-보존 모드 비활성화
 
 #
 # Uncomment if you'd rather use multi-peer Eureka with the eureka-1 and eureka-2 

@@ -14,7 +14,7 @@ import tacos.ingredientclient.Ingredient;
 public class IngredientServiceClient {
 
   private RestTemplate rest;
-  
+  // 로드 밸런싱된 RestTemplate 빈을 주입
   public IngredientServiceClient(@LoadBalanced RestTemplate rest) {
     this.rest = rest;
   }
