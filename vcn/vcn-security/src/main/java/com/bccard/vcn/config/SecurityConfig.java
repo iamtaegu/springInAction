@@ -61,7 +61,7 @@ public class SecurityConfig {
         // !bccard1982:$2y$04$dcqDwT5Rh65I26xfEN2jrOPmvlS8KvV515Ir/SK/VCZU.uRnK4swC
         UserDetails admin = User.withUsername("admin").password("$2y$04$dcqDwT5Rh65I26xfEN2jrOPmvlS8KvV515Ir/SK/VCZU.uRnK4swC").roles("ADMIN").build();
         // 20181049, 20181049
-        UserDetails user = User.withUsername("20181049").password("$2y$04$ewM4R6N5jsZLSl3z08UgduhOdM.foRUA9UDYaqbApxdoQT3dVypwm").roles("ADMIN").build();
+        UserDetails user = User.withUsername("20181049").password("$2y$04$ewM4R6N5jsZLSl3z08UgduhOdM.foRUA9UDYaqbApxdoQT3dVypwm").roles("USER").build();
         return new MapReactiveUserDetailsService(user, admin);
     }
 

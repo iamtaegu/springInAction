@@ -14,6 +14,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class WebClientConfig {
 
+  /** 로드 밸런싱된 WebClient 빈을 선언
+   *
+   * 현재 WebClient는 리본을 통해서만 서비스를 찾는다는 것을 스프링 클라우드에 알려주고,
+   * 주입 식별자로 동작(서비스 이름, HTTP 요청에 호스트와 포트 대신 사용할 수 있음)
+   */
   @Bean
   @LoadBalanced
   public WebClient.Builder webClientBuilder() {
