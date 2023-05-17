@@ -10,6 +10,9 @@ import org.springframework.web.client.RestTemplate;
 import lombok.extern.slf4j.Slf4j;
 
 @Configuration
+/**
+ * 프로파일이 지정돼 있지 않을 때 기본적으로 RestTemplateConfig 실행
+ */
 @Conditional(NotFeignAndNotWebClientCondition.class)
 @Slf4j
 public class RestTemplateConfig {

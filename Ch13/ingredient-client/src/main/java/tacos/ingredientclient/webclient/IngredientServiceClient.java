@@ -15,7 +15,7 @@ public class IngredientServiceClient {
 
   private WebClient.Builder wcBuilder;
 
-  // WebClient 생성자 주입 
+  // WebClient 생성자 주입
   public IngredientServiceClient(@LoadBalanced WebClient.Builder wcBuilder) {
     this.wcBuilder = wcBuilder;
   }

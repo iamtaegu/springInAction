@@ -10,6 +10,11 @@ import org.springframework.web.reactive.function.client.WebClient;
 import lombok.extern.slf4j.Slf4j;
 
 @Configuration
+/**
+ * 프로파일이 webclient 일때 실행
+ *  ㅁ JVM 옵션을 사용해 프로파일을 지정할 수 있음
+ *    > java -jar -Dspring.profiles.active=webclient target/*.jar
+ */
 @Profile("webclient")
 @Slf4j
 public class WebClientConfig {
