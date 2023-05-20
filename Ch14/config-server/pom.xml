@@ -22,6 +22,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+<!-- 스프링 클라우드 릴리즈 트레인 버전
+	 다른 버전의 스프링 클라우드를 사용하고 싶을 때는 spring-cloud.vesion 속성의 값만 바꾸면 됨
+-->
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
 	</properties>
 
@@ -43,6 +46,7 @@
 		</dependency>
 	</dependencies>
 
+<!-- 스프링 클라우드 버전 의존성 -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

@@ -1,3 +1,5 @@
+# 로컬에서 실행하는 경우에는 포트 충돌을 막기 위해서 미사용 포트를 지정
+# 구성 서버의 클라이언트가 구성 서버로부터 구성 데이터를 가져올 때 사용하는 기본 포트
 server:
   port: 8888
   
@@ -14,3 +16,4 @@ spring:
       server:
         git:
           uri: https://github.com/habuma/tacocloud-config
+          #search-paths: config, moreConfig
