@@ -26,6 +26,10 @@
 	</properties>
 
 	<dependencies>
+<!--
+	구성 서버의 클라이언트로 애플리케이션을 활성화하면
+	구성 속성들을 리프레시하기 위해 자동-구성이 액추에이터 엔드포인트를 구성함
+-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

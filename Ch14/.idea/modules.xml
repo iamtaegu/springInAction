@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Ch14.iml" filepath="$PROJECT_DIR$/.idea/Ch14.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greetings/config-server/config-server (1).iml" filepath="$PROJECT_DIR$/greetings/config-server/config-server (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/greetings/greetings/greetings.iml" filepath="$PROJECT_DIR$/greetings/greetings/greetings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />
     </modules>
   </component>
 </project>
