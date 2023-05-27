@@ -59,6 +59,10 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+
+<!--		아래 라이브러리가 추가되면 구성 서버의 클라이언트가 될 수 있음
+			자동-구성이 실행되어 구성 서버로부터 속성들을 가져오는 속성 소스를 등록함
+-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>

@@ -1,3 +1,4 @@
+# 구성 서버에 애플리케이션을 알려줌
 spring:
   application:
     name: ingredient-client
