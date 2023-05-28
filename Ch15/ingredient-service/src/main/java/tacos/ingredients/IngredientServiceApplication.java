@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
-@EnableHystrix
+@EnableHystrix // Hystrix 활성화
 public class IngredientServiceApplication {
 
 	public static void main(String[] args) {

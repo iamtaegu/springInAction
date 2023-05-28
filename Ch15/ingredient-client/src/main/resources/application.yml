@@ -12,7 +12,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
-      
+
+# Hystrix 스트림 엔드포인트 활성화      
 management:
   endpoints:
     web:

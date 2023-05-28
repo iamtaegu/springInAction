@@ -8,8 +8,8 @@ server:
 # it here with the two services (which includes the client application) that are 
 # part of this project. 
 #
+# Hystrix 스트림을 종합할 서비스들을 알 수 있게 Turbine 구성
 turbine:
   app-config: ingredient-service, ingredient-client
 #  app-config: ingredient-service, taco-service, order-service, user-service
   cluster-name-expression: "'default'"
-  

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 @SpringBootApplication
-@EnableTurbine
+@EnableTurbine // Turbine 활성화
 public class TurbineServerApplication {
 
 	public static void main(String[] args) {
