@@ -18,6 +18,8 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
     // @formatter:off
     http
+            //액추에이터 엔드포인트에 적용(EndpointRequest.toAnyEndpoint())
+            //일부에만 적용하고 싶으면 EndpointRequest.to() 사용
       .requestMatcher(EndpointRequest.toAnyEndpoint().excluding("health", "info"))
       .authorizeRequests()
         .anyRequest().hasRole("ADMIN")
@@ -27,7 +29,10 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
       .httpBasic();
     // @formatter:on
   }
-  
+
+  /**
+   * admin/password
+   */
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth
@@ -36,7 +41,8 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
         .password("password")
         .authorities("ROLE_ADMIN");
   }
-  
+ 
+  //password no encoding
   @Bean
   public PasswordEncoder passwordEncoder() {
     return NoOpPasswordEncoder.getInstance();
