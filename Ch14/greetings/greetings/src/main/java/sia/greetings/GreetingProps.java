@@ -12,7 +12,7 @@ public class GreetingProps {
   /**
    * config-server에 속성이 변경 되면
    * curl localhost:8080/actuator/refresh -X POST
-   * 형태로 수동 리프레쉬 시킬 수 있음 
+   * 형태로 수동 리프레쉬 시킬 수 있음
    * @return
    */
   public String getMessage() {
