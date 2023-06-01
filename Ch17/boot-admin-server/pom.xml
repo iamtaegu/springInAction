@@ -26,6 +26,7 @@
 	</properties>
 
 	<dependencies>
+<!-- Spring boot Admin-->
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-server</artifactId>
