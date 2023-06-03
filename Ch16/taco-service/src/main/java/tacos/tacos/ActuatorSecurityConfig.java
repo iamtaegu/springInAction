@@ -41,7 +41,7 @@ public class ActuatorSecurityConfig extends WebSecurityConfigurerAdapter {
         .password("password")
         .authorities("ROLE_ADMIN");
   }
- 
+
   //password no encoding
   @Bean
   public PasswordEncoder passwordEncoder() {

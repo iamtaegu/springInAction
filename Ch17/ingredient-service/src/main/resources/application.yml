@@ -1,10 +1,7 @@
 spring:
   application:
     name: ingredient-service
-
-### These properties configure the application to register with the Spring Boot Admin directly.
-### However, in this case, the application registers with Eureka and the Spring Boot Admin
-### discovers them from Eureka, so these properties aren't needed.    
+# 클라이언트에서 스프링 부트 Admin 클라이언트 등록시
 #  boot:
 #    admin:
 #      client:

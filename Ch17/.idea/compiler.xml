@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="turbine-server" />
-        <module name="config-server" />
         <module name="ingredient-service" />
+        <module name="config-server" />
         <module name="taco-service" />
         <module name="boot-admin-server" />
         <module name="hystrix-dashboard" />
