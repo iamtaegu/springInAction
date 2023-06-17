@@ -30,12 +30,12 @@ public class TacoCloudClient {
     this.traverson = traverson;
   }
 
-  //
-  // GET examples
-  //
-  
-  /*
-   * Specify parameter as varargs argument
+  /**
+   * RestTemplate.getForObject - GET 요청을 전송하고, 응답 몸체와 연결되는 객체를 반환
+   *  ㅁ 아래 예제에서는 하나의 변수만 사용했지만
+   *  ㅁ 주어진 매개변수들의 순서대로 플레이스 홀더에 지정됨
+   * @param ingredientId
+   * @return
    */
   public Ingredient getIngredientById(String ingredientId) {
     return rest.getForObject("http://localhost:8080/ingredients/{id}", 

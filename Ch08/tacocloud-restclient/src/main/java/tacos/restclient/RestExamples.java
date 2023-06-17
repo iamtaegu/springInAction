@@ -28,6 +28,10 @@ public class RestExamples {
     SpringApplication.run(RestExamples.class, args);
   }
 
+  /**
+   * RestTemplate을 빈으로 선언하고 필요할 때 주입하여 사용
+   * @return
+   */
   @Bean
   public RestTemplate restTemplate() {
     return new RestTemplate();
