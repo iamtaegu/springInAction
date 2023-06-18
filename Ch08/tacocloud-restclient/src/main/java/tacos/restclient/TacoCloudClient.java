@@ -41,9 +41,10 @@ public class TacoCloudClient {
     return rest.getForObject("http://localhost:8080/ingredients/{id}", 
                              Ingredient.class, ingredientId);
   }
-    
-  /*
-   * Specify parameters with a map
+
+  /**
+   * RestTemplate.getForObject - GET
+   *  ㅁ Map 형태 파라미터 사용
    */
   public Ingredient getIngredientById2(String ingredientId) {
     Map<String, String> urlVariables = new HashMap<>();
@@ -51,9 +52,10 @@ public class TacoCloudClient {
     return rest.getForObject("http://localhost:8080/ingredients/{id}",
         Ingredient.class, urlVariables);  
   }
-    
-  /*
-   * Request with URI instead of String
+
+  /**
+   * RestTemplate.getForObject - GET
+   *  ㅁ URI 쿼리스트링 사용
    */
   public Ingredient getIngredientById3(String ingredientId) {
     Map<String, String> urlVariables = new HashMap<>();
@@ -63,9 +65,12 @@ public class TacoCloudClient {
               .build(urlVariables);
     return rest.getForObject(url, Ingredient.class);
   }
-    
-  /*
-   * Use getForEntity() instead of getForObject()
+
+  /**
+   * RestTemplate.getForEntity - GET
+   *  ㅁ 응답 결과인 도메인 객체와
+   *  ㅁ 응답 헤더와 같은 더 상세한 응답 콘테츠가 포함
+   *  ㅁ 주어진 매개변수들의 순서대로 플레이스 홀더에 지정
    */
   public Ingredient getIngredientById4(String ingredientId) {
     ResponseEntity<Ingredient> responseEntity =
@@ -85,7 +90,6 @@ public class TacoCloudClient {
   //
   // PUT examples
   //
-  
   public void updateIngredient(Ingredient ingredient) {
     rest.put("http://localhost:8080/ingredients/{id}",
           ingredient, ingredient.getId());
@@ -98,7 +102,15 @@ public class TacoCloudClient {
     return rest.postForObject("http://localhost:8080/ingredients",
         ingredient, Ingredient.class);
   }
-  
+
+  /**
+   * 새로 생성된 리소스의 위치까지 반환
+   *  ㅁ 리소스 대신 새로 생성된 리소스의 URI를 반환
+   *  ㅁ 새로 생성된 리소스 도메인 객체와 리소스 위치(URI)가 필요하면
+   *    > postForEntity() 사용 - createIngredient3
+   * @param ingredient
+   * @return
+   */
   public URI createIngredient2(Ingredient ingredient) {
     return rest.postForLocation("http://localhost:8080/ingredients",
         ingredient, Ingredient.class);
