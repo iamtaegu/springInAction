@@ -30,7 +30,7 @@
 			<version>${tacocloud.version}</version>
 		</dependency>
 
-		<!-- Necessary Boot starters -->
+		<!-- 메시지 브로커(artemis(activemq 구현한 차세대 브로커) or activemq) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-artemis</artifactId>

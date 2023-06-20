@@ -4,9 +4,9 @@ spring:
   jms:
     template:
       default-destination: tacocloud.order.queue
-  artemis:
+  artemis: # 아래 host/port 는 default 설정임
     host: localhost
-    port: 61616
+    port: 61616 # 아르테미스 기본 포트
     user: tacoweb
     password: letm31n
     embedded:
