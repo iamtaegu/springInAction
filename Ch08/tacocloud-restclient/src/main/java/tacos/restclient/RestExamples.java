@@ -102,10 +102,11 @@ public class RestExamples {
       log.info("AFTER:  " + after);
     };
   }
-  
-  //
-  // Traverson examples
-  //
+
+  /**
+   * API의 기본 URI를 갖는 객체를 생성
+   * 생성된 객체의 링크를 따라가면서 API를 사용
+   */
   
   @Bean
   public Traverson traverson() {

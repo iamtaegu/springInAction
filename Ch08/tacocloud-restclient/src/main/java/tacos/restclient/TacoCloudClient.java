@@ -134,26 +134,40 @@ public class TacoCloudClient {
     rest.delete("http://localhost:8080/ingredients/{id}",
         ingredient.getId());
   }
-  
-  //
-  // Traverson with RestTemplate examples
-  //
-  
+
+  /**
+   * Traverson 객체의 사용
+   */
   public Iterable<Ingredient> getAllIngredientsWithTraverson() {
     ParameterizedTypeReference<Resources<Ingredient>> ingredientType =
         new ParameterizedTypeReference<Resources<Ingredient>>() {};
     Resources<Ingredient> ingredientRes =
         traverson
-          .follow("ingredients")
-          .toObject(ingredientType);
+          .follow("ingredients") // 리소스 링크의 관계 이름인 ingredients 인 리소스로 이동
+          .toObject(ingredientType); // 해당 리소스의 콘텐츠 가져오기
+
+    log.info("[getAllIngredientsWithTraverson] >> {}", ingredientRes.toString());
+
     return ingredientRes.getContent();
   }
-  
+
+  /**
+   * RestTemplate - 리소스의 변경 삭제 지원 하지만, API 이동에 제한이 있음
+   * Traverson - 리소스의 변경 삭제 지원 안하지만, API 이동이 용의함
+   *
+   * 따라서 HATEOAS가 활성화된 API의 이동을 Traverson 객체로 처리하고,
+   * RestTemplate로 리소스 변경 삭제를 처리할 수 있음
+   */
   public Ingredient addIngredient(Ingredient ingredient) {
+    // Tarverson 객체를  통한 리소스 추가 Url 가져오고
     String ingredientsUrl = traverson
-        .follow("ingredients")
-        .asLink()
-        .getHref();
+        .follow("ingredients")// '/ingredients'를 따라가고
+        .asLink() // 이 링크 URL 요청
+        .getHref(); // 링크 획득
+
+    log.info("[addIngredient] >> {}", ingredientsUrl);
+
+    // RestTemplate로 처리
     return rest.postForObject(ingredientsUrl,
                               ingredient,
                               Ingredient.class);
