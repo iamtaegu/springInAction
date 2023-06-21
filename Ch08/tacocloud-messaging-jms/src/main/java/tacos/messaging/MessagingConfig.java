@@ -12,6 +12,9 @@ import tacos.Order;
 @Configuration
 public class MessagingConfig {
 
+  /**
+   * 메시지 변환기 구현하기 
+   */
   @Bean
   public MappingJackson2MessageConverter messageConverter() {
     MappingJackson2MessageConverter messageConverter =

@@ -19,6 +19,11 @@ public class JmsOrderMessagingService implements OrderMessagingService {
     this.jms = jms;
   }
 
+  /**
+   * 1번 param, 목적지로
+   * 2번 param, 객체 전달
+   *  ㅇ Order 객체는 Message 객체로 변환되어 전송
+   */
   @Override
   public void sendOrder(Order order) {
     jms.convertAndSend("tacocloud.order.queue", order,

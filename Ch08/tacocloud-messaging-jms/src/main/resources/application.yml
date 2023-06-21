@@ -3,7 +3,7 @@
 spring:
   jms:
     template:
-      default-destination: tacocloud.order.queue
+      default-destination: tacocloud.order.queue # jms.send() 도착지
   artemis: # 아래 host/port 는 default 설정임
     host: localhost
     port: 61616 # 아르테미스 기본 포트
