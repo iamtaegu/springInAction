@@ -13,7 +13,9 @@ import tacos.Order;
 public class MessagingConfig {
 
   /**
-   * 메시지 변환기 구현하기 
+   * 메시지 변환기 구현하기
+   * MappingJackson2MessageConverter: Jackson 2 JSON 라이브러리를 사용하여 객체를 JSON 형태로 변환
+   * setTypeIdPropertyName, setTypeIdMappings 설정으로 key - order 매핑처리
    */
   @Bean
   public MappingJackson2MessageConverter messageConverter() {

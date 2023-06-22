@@ -27,11 +27,16 @@ public class JmsOrderMessagingService implements OrderMessagingService {
   @Override
   public void sendOrder(Order order) {
     jms.convertAndSend("tacocloud.order.queue", order,
-        this::addOrderSource);
+        this::addOrderSource); //메서드 참조를 사용하면 람다 사용을 통한 불피룡한 중복을 막을 수 있음
   }
-  
+
+  /**
+   * JmsTemplate.convertAndSend 를 사용하면 Message 객체가 내부적으로 생성되기 때문에
+   * 내부적으로 생성된 Message가 전송되기 전에 마지막 인자 값을 실행해줌
+   *
+   */
   private Message addOrderSource(Message message) throws JMSException {
-    message.setStringProperty("X_ORDER_SOURCE", "WEB");
+    message.setStringProperty("X_ORDER_SOURCE", "WEB"); //온라인:WEB, 오프라인:STORE
     return message;
   }
 
