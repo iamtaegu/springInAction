@@ -1,11 +1,11 @@
 server:
   port: 9090
 
-spring:
-  security:
-    user:
-      name: admin
-      password: 53cr3t
+#spring:
+#  security:
+#    user:
+#      name: admin
+#      password: 53cr3t
 
 # 아래 설정의 default는 true이고, Admin 서버가 유레카 클라이언트가 됨
 # false로 설정하면 Admin 서버를 유레카 서비스로 등록

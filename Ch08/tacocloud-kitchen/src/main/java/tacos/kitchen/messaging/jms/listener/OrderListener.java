@@ -19,6 +19,10 @@ public class OrderListener {
     this.ui = ui;
   }
 
+  /**
+   * 도착지의 메시지를 수신하기 위해
+   * JmsListener가 선언되어 있음 
+   */
   @JmsListener(destination = "tacocloud.order.queue")
   public void receiveOrder(Order order) {
     ui.displayOrder(order);
