@@ -25,6 +25,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
@@ -39,11 +40,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.bccard</groupId>-->
-<!--            <artifactId>vcn-api</artifactId>-->
-<!--            <version>${vcn.version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.bccard</groupId>
+            <artifactId>vcn-api</artifactId>
+            <version>${vcn.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.bccard</groupId>
             <artifactId>vcn-domain</artifactId>

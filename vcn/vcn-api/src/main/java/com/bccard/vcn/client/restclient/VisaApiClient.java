@@ -29,6 +29,8 @@ public class VisaApiClient {
         try {
             respMap = rest.postForEntity("https://sandbox.api.visa.com/vpa/v1/requisitionService",
                     requestParam, Map.class);
+
+            log.info(respMap.toString());
         } catch (HttpClientErrorException clientError) {
             returnStr = clientError.getResponseBodyAsString();
         }

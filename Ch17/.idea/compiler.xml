@@ -7,14 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="turbine-server" />
-        <module name="ingredient-service" />
-        <module name="config-server" />
-        <module name="taco-service" />
-        <module name="boot-admin-server" />
-        <module name="hystrix-dashboard" />
-        <module name="ingredient-client" />
-        <module name="service-registry" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
