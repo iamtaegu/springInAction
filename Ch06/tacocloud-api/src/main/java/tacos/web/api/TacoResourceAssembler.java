@@ -10,12 +10,14 @@ public class TacoResourceAssembler
   public TacoResourceAssembler() {
     super(DesignTacoController.class, TacoResource.class);
   }
-  
+
+  // Resource 인스턴스만 생성
   @Override
   protected TacoResource instantiateResource(Taco taco) {
     return new TacoResource(taco);
   }
 
+  // Resource 인스턴스를 생성하면서 링크도 추가
   @Override
   public TacoResource toResource(Taco taco) {
     return createResourceWithId(taco.getId(), taco);
