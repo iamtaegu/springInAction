@@ -4,6 +4,7 @@ spring:
   jms:
     template:
       default-destination: tacocloud.order.queue
+# 스프링은 Artemis 브로커가 localhost:61616 포트가 default
   artemis:
     host: localhost
     port: 61616
