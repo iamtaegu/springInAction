@@ -21,7 +21,11 @@ public class OrderListener {
 
   /**
    * 도착지의 메시지를 수신하기 위해
-   * JmsListener가 선언되어 있음
+   * JMS 메시지에 반응하는 메시지 리스너 생성을 위한 @JmsListener 명시
+   *
+   * JmsTemplate를 사용하지 않으며, 애플리케이션 코드에서 호출하지 않음
+   * 스프링 프레임워크에서 지정 도착지에서 메시지가 도착하면
+   * Order 객체를 인자로 전달하면서 receiveOrder 메소드를 호출
    */
   @JmsListener(destination = "tacocloud.order.queue")
   public void receiveOrder(Order order) {
